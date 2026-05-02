@@ -1,6 +1,6 @@
 <script lang="ts">
+	import friendsPhoto from '$lib/assets/photos/friends.png';
 	import Button from './Button.svelte';
-	import Placeholder from './Placeholder.svelte';
 </script>
 
 <section class="announcement" aria-labelledby="announcement-title">
@@ -18,10 +18,14 @@
 			<Button href="/contact">Contactez-nous</Button>
 		</div>
 		<div class="announcement__media">
-			<Placeholder
-				aspect="3 / 4"
-				radius="md"
-				label="Élèves en cours d'instrument"
+			<img
+				class="announcement__photo"
+				src={friendsPhoto}
+				alt="Deux élèves jouent de la guitare au bord de la Saône"
+				width="1920"
+				height="1280"
+				loading="lazy"
+				decoding="async"
 			/>
 		</div>
 	</div>
@@ -72,6 +76,14 @@
 		justify-self: end;
 		width: 100%;
 		max-width: 42rem;
+	}
+
+	.announcement__photo {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		border-radius: var(--radius-md);
 	}
 
 	@media (max-width: 48rem) {
