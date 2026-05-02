@@ -1,6 +1,7 @@
 <script lang="ts">
 	import girlPhoto from '$lib/assets/photos/girl.png';
 	import percussionsPhoto from '$lib/assets/photos/percussions.png';
+	import pianoPhoto from '$lib/assets/photos/piano.png';
 	import Placeholder from './Placeholder.svelte';
 
 	type Audience = {
@@ -23,7 +24,8 @@
 			title: 'Les ados',
 			meta: '11 à 17 ans',
 			body: "Cours individuels d'instrument, chant, groupe rock et musiques actuelles à partir de la 3e année.",
-			label: 'Illustration groupe ados en répétition'
+			label: 'Mains en train de jouer du piano',
+			photo: { src: pianoPhoto, width: 1920, height: 1440 }
 		},
 		{
 			title: 'Les adultes',

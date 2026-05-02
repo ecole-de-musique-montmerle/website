@@ -43,7 +43,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-3);
-		max-width: 48ch;
 	}
 
 	.end-cta__title {
@@ -56,5 +55,6 @@
 		font-size: var(--font-size-base);
 		line-height: var(--line-height-body);
 		color: var(--color-text-on-dark-muted);
+		max-width: 56ch;
 	}
 </style>

@@ -30,7 +30,7 @@
 	.hero {
 		background-color: var(--color-surface-primary);
 		color: var(--color-text-on-dark);
-		padding-block: clamp(var(--space-9), 5vw, var(--space-12)) var(--space-10);
+		padding-block: clamp(var(--space-10), 6vw, var(--space-13)) var(--space-10);
 	}
 
 	.hero .container {

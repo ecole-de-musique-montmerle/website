@@ -1,20 +1,41 @@
 <script lang="ts">
+	import guitarPhoto from '$lib/assets/photos/guitar.png';
 	import Placeholder from './Placeholder.svelte';
 
-	const labels = [
-		"Photographie d'un cours de piano",
-		"Photographie d'un atelier collectif",
-		"Photographie d'une chorale",
-		"Photographie d'une audition",
-		"Photographie de la vie associative"
+	type GalleryItem = {
+		label: string;
+		photo?: { src: string; width: number; height: number };
+	};
+
+	const items: GalleryItem[] = [
+		{
+			label: "Gros plan de mains qui jouent d'une guitare acoustique",
+			photo: { src: guitarPhoto, width: 1920, height: 1362 }
+		},
+		{ label: "Photographie d'un cours de piano" },
+		{ label: "Photographie d'un atelier collectif" },
+		{ label: "Photographie d'une chorale" },
+		{ label: "Photographie d'une audition" }
 	];
 </script>
 
 <section class="gallery" aria-label="Galerie photo de l'école">
 	<ul class="gallery__list" role="list">
-		{#each labels as label, index (label)}
+		{#each items as item, index (item.label)}
 			<li class={['gallery__item', index >= 4 && 'gallery__item--last-on-narrow']}>
-				<Placeholder aspect="1 / 1" radius="sm" {label} />
+				{#if item.photo}
+					<img
+						class="gallery__photo"
+						src={item.photo.src}
+						alt={item.label}
+						width={item.photo.width}
+						height={item.photo.height}
+						loading="lazy"
+						decoding="async"
+					/>
+				{:else}
+					<Placeholder aspect="1 / 1" radius="sm" label={item.label} />
+				{/if}
 			</li>
 		{/each}
 	</ul>
@@ -43,6 +64,14 @@
 
 	.gallery__item {
 		min-width: 0;
+	}
+
+	.gallery__photo {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		border-radius: var(--radius-sm);
 	}
 
 	@media (max-width: 48rem) {

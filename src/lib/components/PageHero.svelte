@@ -11,10 +11,12 @@
 <section class="page-hero" aria-labelledby="page-hero-title">
 	<div class="container">
 		<header class="page-hero__inner">
-			{#if eyebrow}
-				<p class="page-hero__eyebrow">{eyebrow}</p>
-			{/if}
-			<h1 id="page-hero-title" class="page-hero__title">{title}</h1>
+			<div class="page-hero__heading">
+				{#if eyebrow}
+					<p class="page-hero__eyebrow">{eyebrow}</p>
+				{/if}
+				<h1 id="page-hero-title" class="page-hero__title">{title}</h1>
+			</div>
 			{#if lede}
 				<p class="page-hero__lede">{lede}</p>
 			{/if}
@@ -32,7 +34,13 @@
 	.page-hero__inner {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-5);
+		gap: var(--space-8);
+	}
+
+	.page-hero__heading {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
 	}
 
 	.page-hero__eyebrow {
