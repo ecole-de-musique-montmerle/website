@@ -1,2 +1,23 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import Announcement from '$lib/components/Announcement.svelte';
+	import Audiences from '$lib/components/Audiences.svelte';
+	import Ensembles from '$lib/components/Ensembles.svelte';
+	import Gallery from '$lib/components/Gallery.svelte';
+	import Hero from '$lib/components/Hero.svelte';
+	import Story from '$lib/components/Story.svelte';
+</script>
+
+<svelte:head>
+	<title>École de Musique 3 Rivières, Montmerle-sur-Saône</title>
+	<meta
+		name="description"
+		content="École de musique associative à Montmerle-sur-Saône, depuis 1997. Cours individuels, chorales et ensembles, pour enfants, ados et adultes."
+	/>
+</svelte:head>
+
+<Hero />
+<Audiences />
+<Announcement />
+<Story />
+<Gallery />
+<Ensembles />

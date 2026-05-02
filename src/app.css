@@ -1,0 +1,291 @@
+@layer reset, tokens, base, utilities;
+
+@layer tokens {
+	:root {
+		--color-blue: oklch(0.3 0.16 264);
+		--color-blue-deep: oklch(0.22 0.13 268);
+		--color-ivoire: oklch(0.97 0.018 95);
+		--color-gold: oklch(0.72 0.09 82);
+		--color-gold-deep: oklch(0.62 0.1 78);
+		--color-noir: oklch(0.2 0.07 276);
+		--color-paper: oklch(1 0 0);
+
+		--color-line: oklch(0.88 0.012 80);
+		--color-placeholder: oklch(0.86 0.014 85);
+
+		--color-surface-primary: var(--color-blue);
+		--color-surface-secondary: var(--color-ivoire);
+		--color-surface-accent: var(--color-blue);
+
+		--color-text-primary: var(--color-noir);
+		--color-text-secondary: oklch(from var(--color-noir) l c h / 0.65);
+		--color-text-on-dark: var(--color-ivoire);
+		--color-text-on-dark-muted: oklch(from var(--color-ivoire) l c h / 0.7);
+		--color-text-accent: var(--color-gold);
+
+		--color-action: var(--color-gold);
+		--color-action-text: var(--color-noir);
+		--color-action-hover: var(--color-gold-deep);
+		--color-action-focus: var(--color-gold);
+
+		--font-display: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+		--font-body:
+			'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+		--font-weight-regular: 400;
+		--font-weight-medium: 500;
+		--font-weight-semibold: 600;
+
+		--line-height-tight: 1;
+		--line-height-display: 1.05;
+		--line-height-heading: 1.15;
+		--line-height-body: 1.55;
+		--line-height-loose: 1.7;
+
+		--tracking-tight: -0.02em;
+		--tracking-normal: 0;
+		--tracking-wide: 0.02em;
+
+		--font-size-2xs: 0.75rem;
+		--font-size-xs: 0.8125rem;
+		--font-size-sm: 0.875rem;
+		--font-size-base: 1rem;
+		--font-size-md: 1.125rem;
+		--font-size-lg: 1.25rem;
+		--font-size-xl: 1.5rem;
+		--font-size-2xl: 1.875rem;
+		--font-size-3xl: 2.5rem;
+		--font-size-4xl: clamp(2.25rem, 3.2vw + 1rem, 3.75rem);
+		--font-size-5xl: clamp(2.5rem, 4.4vw + 1rem, 4.75rem);
+		--font-size-display: clamp(2.75rem, 6.4vw + 1rem, 7rem);
+
+		--space-1: 0.25rem;
+		--space-2: 0.5rem;
+		--space-3: 0.75rem;
+		--space-4: 1rem;
+		--space-5: 1.25rem;
+		--space-6: 1.5rem;
+		--space-7: 2rem;
+		--space-8: 2.5rem;
+		--space-9: 3rem;
+		--space-10: 4rem;
+		--space-11: 5rem;
+		--space-12: 6rem;
+		--space-13: 8rem;
+
+		--section-padding-y: clamp(var(--space-9), 7vw, var(--space-13));
+		--section-padding-x: clamp(var(--space-5), 3vw, var(--space-10));
+
+		--container-width: 96rem;
+		--container-narrow: 56rem;
+
+		--radius-sm: 0.5rem;
+		--radius-md: 0.75rem;
+		--radius-lg: 1.25rem;
+		--radius-xl: 1.75rem;
+		--radius-2xl: 2.5rem;
+		--radius-pill: 9999px;
+
+		--border-thin: 1px;
+		--border-thick: 2px;
+
+		--motion-fast: 150ms;
+		--motion-normal: 220ms;
+		--motion-slow: 380ms;
+		--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+		--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+		color-scheme: light;
+		accent-color: var(--color-gold);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		:root {
+			--motion-fast: 0ms;
+			--motion-normal: 0ms;
+			--motion-slow: 0ms;
+		}
+	}
+}
+
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+	}
+
+	html {
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+		font-feature-settings: 'kern';
+	}
+
+	body {
+		min-height: 100dvh;
+		line-height: var(--line-height-body);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+		color: inherit;
+	}
+
+	button {
+		background: none;
+		border: 0;
+		padding: 0;
+		cursor: pointer;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	:focus-visible {
+		outline: var(--border-thick) solid var(--color-action-focus);
+		outline-offset: 3px;
+		border-radius: var(--radius-sm);
+	}
+}
+
+@layer base {
+	html {
+		font-family: var(--font-body);
+		color: var(--color-text-on-dark);
+		background-color: var(--color-surface-primary);
+	}
+
+	body {
+		font-size: var(--font-size-base);
+		font-weight: var(--font-weight-regular);
+		font-synthesis-weight: none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-display);
+		font-weight: var(--font-weight-medium);
+		line-height: var(--line-height-heading);
+		letter-spacing: var(--tracking-tight);
+		font-optical-sizing: auto;
+	}
+
+	h1 {
+		font-size: var(--font-size-display);
+		line-height: var(--line-height-display);
+	}
+
+	h2 {
+		font-size: var(--font-size-5xl);
+	}
+
+	h3 {
+		font-size: var(--font-size-2xl);
+		letter-spacing: var(--tracking-normal);
+	}
+
+	::selection {
+		background-color: var(--color-gold);
+		color: var(--color-noir);
+	}
+}
+
+@layer utilities {
+	.container {
+		width: 100%;
+		max-width: var(--container-width);
+		margin-inline: auto;
+		padding-inline: var(--section-padding-x);
+	}
+
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.skip-link {
+		position: absolute;
+		top: var(--space-3);
+		left: var(--space-3);
+		padding: var(--space-3) var(--space-5);
+		background-color: var(--color-gold);
+		color: var(--color-noir);
+		border-radius: var(--radius-pill);
+		font-weight: var(--font-weight-medium);
+		transform: translateY(-200%);
+		transition: transform var(--motion-fast) var(--ease-out);
+		z-index: 100;
+	}
+
+	.skip-link:focus {
+		transform: translateY(0);
+	}
+
+	.page-section {
+		padding-block: var(--section-padding-y);
+	}
+
+	.page-section--light {
+		background-color: var(--color-surface-secondary);
+		color: var(--color-text-primary);
+		--color-action: var(--color-blue);
+		--color-action-text: var(--color-ivoire);
+		--color-action-hover: var(--color-blue-deep);
+		--color-action-focus: var(--color-blue);
+	}
+
+	.page-section--dark {
+		background-color: var(--color-surface-primary);
+		color: var(--color-text-on-dark);
+	}
+}

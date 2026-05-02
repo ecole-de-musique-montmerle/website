@@ -12,6 +12,10 @@ const config = {
 		}),
 		paths: {
 			base: process.env.BASE_PATH ?? ''
+		},
+		prerender: {
+			handleHttpError: 'warn',
+			handleMissingId: 'warn'
 		}
 	}
 };
