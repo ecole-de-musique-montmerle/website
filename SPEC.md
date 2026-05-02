@@ -2,11 +2,11 @@
 
 ## 1. Objectif
 
-Créer un site vitrine moderne, premium et très clair pour l’École de Musique 3 Rivières de Montmerle-sur-Saône.
+Créer un site vitrine pour l’École de Musique 3 Rivières de Montmerle-sur-Saône.
 
-Le site doit remplacer l’image actuelle d’un site très simple par une présence digitale crédible, rassurante et élégante, avec une direction artistique white theme Apple-grade : beaucoup d’espace, typographie nette, hiérarchie forte, interfaces calmes, contenu au premier plan.
+Le site doit remplacer l’image actuelle d’un site très simple par une présence digitale crédible, rassurante et claire.
 
-Aucun développement n’est prévu dans cette phase. Ce document sert de base produit, design, contenu et technique.
+Aucun développement n’est prévu dans cette phase. Ce document sert de base produit et contenu.
 
 ## 2. Sources publiques exploitées
 
@@ -15,7 +15,6 @@ Sources principales :
 - Offre, tarifs, inscriptions : https://www.ecoledemusique3rivieres.com/services-6
 - Professeurs : https://www.ecoledemusique3rivieres.com/about
 - Contact : https://www.ecoledemusique3rivieres.com/contact-5
-- Material Symbols (icônes, documentation Google) : https://fonts.google.com/icons
 - Département de l’Ain, enseignement artistique : https://www.ain.fr/solutions/documentation-enseignement-artistique/
 - Fiche publique Infonet : https://infonet.fr/entreprises/41444401800025-ecole-de-musique-3-rivieres/
 - Articles locaux Le Progrès sur l’école et ses auditions, par exemple :
@@ -152,7 +151,7 @@ Adultes débutants ou reprise :
 
 Adolescents :
 - Sensibles aux groupes, rock, musiques actuelles, scène, auditions.
-- Besoin d’un site qui donne envie sans paraître institutionnel ou daté.
+- Attentes fortes sur l’image de l’offre (modernité, envie d’adhérer) sans ton institutionnel ou daté.
 
 Habitants de Montmerle et alentours :
 - Cherchent une information rapide : téléphone, lieu, inscription, horaires, événements.
@@ -193,23 +192,24 @@ Navigation principale :
 - Inscription
 - Contact
 
-CTA principal global : Demander une inscription  
-CTA secondaire : Appeler l’école
+Actions principales souhaitées :
+- Demander une inscription
+- Appeler l’école
 
 ## 10. Contenu par page
 
 Accueil :
-- Hero clair avec proposition de valeur.
+- Proposition de valeur claire.
 - Accroche : apprendre, jouer, chanter et partager la musique à Montmerle-sur-Saône.
-- CTA inscription et contact.
+- Accès inscription et contact.
 - Aperçu des cours.
-- Bloc “Pour enfants, ados et adultes”.
-- Bloc “Une école associative locale depuis 1997”.
+- Bloc « Pour enfants, ados et adultes ».
+- Bloc « Une école associative locale depuis 1997 ».
 - Mise en avant des ensembles.
 - Contact rapide.
 
 Cours et pratiques :
-- Instruments sous forme de grille filtrable ou sections.
+- Instruments présentés de façon structurée (par familles ou listes).
 - Chant et chorales.
 - Solfège et formation musicale.
 - Éveil musical.
@@ -220,19 +220,19 @@ Professeurs :
 - Liste claire des professeurs.
 - Discipline principale.
 - Présentation sobre, sans inventer de biographies non sourcées.
-- Prévoir un emplacement futur pour photos et bios validées.
+- Photos et textes détaillés seulement après validation par l’école.
 
 Tarifs et inscription :
 - Explication du paiement.
 - Moyens acceptés.
 - Réductions.
 - Subvention mairie.
-- CTA de contact.
+- Invitation à contacter l’école.
 - Mention que les tarifs détaillés doivent être validés par l’école avant publication s’ils ne sont pas fournis.
 
 Événements :
 - Auditions, concerts, moments associatifs.
-- Prévoir une structure future même si aucun agenda complet n’est disponible.
+- Prévoir une rubrique même si aucun agenda complet n’est disponible au départ.
 - Ne publier que des dates validées.
 
 Contact :
@@ -241,121 +241,11 @@ Contact :
 - Téléphones.
 - Email.
 - Horaires sur rendez-vous.
-- Formulaire simple.
-- Carte ou lien itinéraire.
-- Message de confirmation clair après envoi.
+- Moyen de prise de contact (formulaire ou équivalent).
+- Indication d’itinéraire ou d’accès.
+- Confirmation claire après envoi d’un message.
 
-## 11. Direction artistique
-
-Style : white theme Apple-grade.
-
-Principes :
-- Clarté absolue.
-- Interface discrète au service du contenu.
-- Beaucoup d’espace blanc.
-- Typographie premium, lisible et calme.
-- Une seule couleur d’accent.
-- Surfaces très légères.
-- Pas d’effet décoratif gratuit.
-- Pas de surcharge visuelle musicale clichée.
-
-Contraintes design projet :
-- Utiliser des design tokens.
-- Utiliser OKLCH exclusivement pour les couleurs.
-- Ne pas utiliser de blur.
-- Ne pas utiliser de shadow.
-- Ne pas hardcoder les valeurs.
-- Prévoir light mode et dark mode, même si le rendu prioritaire est light.
-- Prévoir Dynamic Type et accessibilité.
-
-Interprétation Apple sans blur ni shadow :
-- Profondeur obtenue par hiérarchie, espacement, bordures fines et surfaces tonales.
-- Pas de glassmorphism.
-- Pas de gradients décoratifs.
-- Pas de skeuomorphisme musical.
-
-## 12. Tokens design
-
-Couleurs en OKLCH uniquement :
-- background : blanc chaud très neutre
-- surface : blanc légèrement cassé
-- surface-raised : gris très clair
-- border : gris neutre faible contraste
-- text-primary : noir doux
-- text-secondary : gris profond
-- text-muted : gris moyen
-- accent : bleu système calme ou indigo culturel
-- success : vert
-- warning : orange
-- error : rouge
-- info : bleu
-
-Typographie :
-- Police principale : **Inter** uniquement, au format **variable** (SIL Open Font License), distribuée en self-host ou via paquet npm (`@fontsource-variable/inter` ou équivalent). **Exclure** SF Pro, `-apple-system`, `BlinkMacSystemFont` et toute pile qui repose sur les polices système Apple : droits d’usage restreints et risque juridique ou de marque pour un site tiers.
-- **Optical size (`opsz`)** : utiliser la version variable d’Inter qui expose l’axe `opsz` ; activer `font-optical-sizing: auto` et, si besoin fin, relier `font-variation-settings: "opsz" …` à des **tokens** (corps, sous-titre, titre) alignés sur la taille de police cible, pour un rendu SOTA lisible à toutes les tailles.
-- Pile de secours neutre après Inter : `ui-sans-serif, sans-serif` (éviter `system-ui` seul sur macOS où il peut résoudre vers San Francisco).
-- Maximum 3 graisses sur l’axe `wght` : regular (400), medium (500), semibold (600).
-- Titres avec tracking légèrement négatif.
-- Corps très lisible, line-height généreux.
-
-Icônes :
-- Utiliser la famille **Material Symbols** de Google (successeur state-of-the-art de **Material Icons**, même catalogue élargi, licence **Apache 2.0**). Préférer une variante sobre alignée sur la DA : **Outlined** ou **Rounded**, une seule famille pour tout le site.
-- Format recommandé : **police variable** (axes `FILL`, `wght`, `GRAD`, `opsz` selon besoin) ou **SVG** tree-shaké / sous-ensemble pour limiter le poids ; intégration possible via paquets npm légers (`@material-symbols/font-*`, Iconify `material-symbols`, ou SVG inline générés).
-- Taille et couleur des glyphes rattachées aux **tokens** (couleur texte / accent, taille tactile minimum). Ne pas mélanger avec d’autres jeux d’icônes sans justification produit.
-- Accessibilité : icône purement décorative avec `aria-hidden="true"` et sens porté par le texte voisin ; si l’icône porte seule l’information, libellé accessible (`aria-label`, texte visible, ou `title` selon pattern retenu).
-
-Layout :
-- Grille basée sur multiples de 8
-- Sections aérées
-- Largeur contenu limitée
-- Mobile-first
-- Navigation compacte et évidente
-
-Rayons :
-- Petits boutons : rayon modéré
-- Cards : rayon généreux mais sobre
-- Aucun arrondi excessif
-
-États interactifs :
-- Focus visible
-- Pressed state
-- Active state
-- Disabled state
-- Feedback clair sur les formulaires
-
-## 13. Composants
-
-Composants nécessaires :
-- Jeu d’icônes unique **Material Symbols** (navigation, CTA secondaires, listes, formulaire, footer)
-- Header sticky sobre
-- Navigation responsive
-- Hero
-- CTA button primaire et secondaire
-- Card cours
-- Card professeur
-- Bloc information pratique
-- Bloc tarif/aide
-- Liste d’instruments
-- Section témoignages future, désactivée tant qu’aucun contenu n’est validé
-- Formulaire de contact
-- Footer complet
-- Bandeau contact rapide mobile
-
-## 14. Accessibilité
-
-Exigences :
-- Contraste WCAG AA minimum.
-- Navigation clavier complète.
-- Focus visible partout.
-- Taille de texte adaptable.
-- Zones tactiles confortables.
-- Aucun contenu transmis uniquement par la couleur.
-- Formulaire avec labels explicites.
-- Messages d’erreur et succès compréhensibles.
-- Respect de prefers-reduced-motion.
-- Aucune animation indispensable à la compréhension.
-
-## 15. SEO et contenu
+## 11. SEO et contenu
 
 Objectifs SEO :
 - École de musique Montmerle-sur-Saône
@@ -372,47 +262,16 @@ Pages SEO prioritaires :
 - Inscription
 - Contact
 
-Données structurées à prévoir :
-- LocalBusiness ou EducationalOrganization
-- PostalAddress
-- OpeningHoursSpecification
-- ContactPoint
-- SameAs seulement pour les réseaux sociaux confirmés
-
 Attention réseaux sociaux :
 - Facebook
 - Instagram
 
-## 16. Exigences techniques futures
-
-Stack projet actuelle :
-- SvelteKit
-- Svelte 5
-- TypeScript
-- Vite
-- npm
-- ESLint
-- Prettier
-- Icônes : Material Symbols (famille Material Icons, Google, Apache 2.0)
-
-Exigences :
-- Site statique ou SSR léger selon hébergement.
-- Performance Lighthouse élevée.
-- Images optimisées.
-- CSS tokenisé.
-- Pas de dépendance lourde inutile.
-- HTML sémantique.
-- Formulaire compatible solution future d’envoi email.
-- Prévoir contenu facilement maintenable.
-
-## 17. Critères d’acceptation
+## 12. Critères d’acceptation
 
 Le site sera considéré conforme si :
 - L’utilisateur comprend l’offre en moins de 10 secondes.
 - Le contact est visible dès l’accueil.
 - Les cours, professeurs, inscription et lieu sont accessibles en un clic depuis la navigation.
-- La DA est premium, blanche, sobre et cohérente.
 - Aucune information non sourcée n’est inventée.
-- Les règles design sont respectées : tokens, OKLCH, pas de blur, pas de shadow, pas de valeurs hardcodées ; typographie **Inter** variable avec `opsz`, sans SF ni stack système Apple pour le texte ; **Material Symbols** pour les icônes, avec règles d’accessibilité.
 - Le site est utilisable au clavier et sur mobile.
 - Le contenu distingue clairement l’école de Montmerle de l’EM3R de Saint-Jean-le-Vieux.
