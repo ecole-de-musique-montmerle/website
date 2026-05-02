@@ -40,7 +40,7 @@ Courriel public départemental : afdcm-montmerle@laposte.net
 Site actuel : https://www.ecoledemusique3rivieres.com/
 
 Contacts publics :
-- Guillemette BOURMEYSTER : 06 62 03 03 84  
+- Guillemette BOURMEYSTER : 06 73 71 46 99
   Rôle documenté dans la presse locale : présidente de l’école de musique de Montmerle-sur-Saône ; citée en mai 2025 dans le cadre du festival « des 5 à 7 » et de la scène ouverte « Trempl’Ain » (jeunes talents), avec le comité des fêtes. Source : https://www.leprogres.fr/societe/2025/05/28/le-festival-des-5-a-7-ouvre-sa-scene-aux-jeunes-talents
 
 Horaires : du lundi au samedi, sur rendez-vous.
@@ -417,13 +417,6 @@ Le site sera considéré conforme si :
 
 ## 18. Questions à valider avec l’école
 
-- Tarifs détaillés actuels.
-- Dates d’inscription 2026.
-- Email de contact principal à afficher.
-- Confirmation des numéros de téléphone.
-- Confirmation des réseaux sociaux officiels.
-- Photos autorisées des professeurs, élèves, auditions et locaux.
+- Email de contact principal à afficher. ecolemusiquemontmerle3r@gmail.com
+- Confirmation des réseaux sociaux officiels. FB, Insta
 - Texte officiel de présentation de l’association.
-- Éventuel règlement intérieur.
-- Agenda public des auditions et concerts.
-- Préférence entre “École de Musique 3 Rivières” et “École de musique des Trois-Rivières”.
