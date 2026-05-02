@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
 	import Placeholder from '$lib/components/Placeholder.svelte';
@@ -172,7 +173,7 @@
 <EndCta
 	title="Envie de rencontrer l'équipe&nbsp;?"
 	lede="Sur rendez-vous, du lundi au samedi, à Montmerle-sur-Saône."
-	cta={{ href: '/contact', label: 'Prendre contact' }}
+	cta={{ href: `${base}/contact`, label: 'Prendre contact' }}
 />
 
 <style>

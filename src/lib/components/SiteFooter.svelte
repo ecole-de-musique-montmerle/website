@@ -1,12 +1,21 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Logo from './Logo.svelte';
 
 	const footerLinks = [
-		{ href: '/cours', label: 'Cours' },
-		{ href: '/professeurs', label: 'Professeurs' },
-		{ href: '/inscription', label: 'Inscription' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: `${base}/cours`, label: 'Cours' },
+		{ href: `${base}/professeurs`, label: 'Professeurs' },
+		{ href: `${base}/inscription`, label: 'Inscription' },
+		{ href: `${base}/contact`, label: 'Contact' }
 	];
+
+	const legalLinks = [
+		{ href: `${base}/mentions-legales`, label: 'Mentions légales' },
+		{ href: `${base}/confidentialite`, label: 'Confidentialité' },
+		{ href: `${base}/accessibilite`, label: 'Accessibilité' }
+	];
+
+	const currentYear = new Date().getFullYear();
 
 	const socials = [
 		{
@@ -25,7 +34,11 @@
 <footer class="site-footer">
 	<div class="container">
 		<div class="site-footer__top">
-			<Logo href="/" tone="inherit" ariaLabel="École de Musique 3 Rivières, retour à l'accueil" />
+			<Logo
+				href={`${base}/`}
+				tone="inherit"
+				ariaLabel="École de Musique 3 Rivières, retour à l'accueil"
+			/>
 
 			<nav aria-label="Navigation secondaire" class="site-footer__nav">
 				<ul class="site-footer__list">
@@ -74,6 +87,24 @@
 			<a class="site-footer__contact" href="tel:+33673714699">
 				06 73 71 46 99
 			</a>
+		</div>
+
+		<div class="site-footer__rule" role="presentation"></div>
+
+		<div class="site-footer__legal">
+			<p class="site-footer__copyright">
+				© {currentYear} École de Musique 3 Rivières (AFDCM). Association loi 1901.
+			</p>
+
+			<nav aria-label="Informations légales" class="site-footer__legal-nav">
+				<ul class="site-footer__legal-list">
+					{#each legalLinks as item (item.href)}
+						<li>
+							<a class="site-footer__legal-link" href={item.href}>{item.label}</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
 		</div>
 	</div>
 </footer>
@@ -185,6 +216,38 @@
 		border-bottom-color: currentColor;
 	}
 
+	.site-footer__legal {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-4) var(--space-7);
+		font-size: var(--font-size-xs);
+		color: oklch(from var(--color-ivoire) l c h / 0.75);
+	}
+
+	.site-footer__copyright {
+		margin: 0;
+	}
+
+	.site-footer__legal-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-5);
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.site-footer__legal-link {
+		font-weight: var(--font-weight-medium);
+		transition: color var(--motion-fast) var(--ease-out);
+	}
+
+	.site-footer__legal-link:hover {
+		color: var(--color-ivoire);
+	}
+
 	@media (max-width: 48rem) {
 		.site-footer__top {
 			grid-template-columns: 1fr;
@@ -203,6 +266,11 @@
 		.site-footer__contact,
 		.site-footer__contact:last-of-type {
 			justify-self: start;
+		}
+
+		.site-footer__legal {
+			flex-direction: column;
+			align-items: flex-start;
 		}
 	}
 </style>

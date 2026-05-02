@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import montmerlePhoto from '$lib/assets/photos/montmerle.png';
 	import Button from './Button.svelte';
 </script>
@@ -39,7 +40,7 @@
 					</p>
 				</div>
 
-				<Button href="/inscription">Rejoindre l'école</Button>
+				<Button href={`${base}/inscription`}>Rejoindre l'école</Button>
 			</div>
 		</div>
 	</div>

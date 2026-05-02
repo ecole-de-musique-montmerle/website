@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import friendsPhoto from '$lib/assets/photos/friends.png';
 	import Button from './Button.svelte';
 </script>
@@ -15,7 +16,7 @@
 					vous et de vous présenter le projet pédagogique de l'école.
 				</p>
 			</div>
-			<Button href="/contact">Contactez-nous</Button>
+			<Button href={`${base}/contact`}>Contactez-nous</Button>
 		</div>
 		<div class="announcement__media">
 			<img

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
 
@@ -117,7 +118,7 @@
 <EndCta
 	title="Prêt à inscrire votre élève&nbsp;?"
 	lede="Échangez avec nous pour choisir le cours, l'instrument et la formule de paiement adaptés."
-	cta={{ href: '/contact', label: 'Demander une inscription' }}
+	cta={{ href: `${base}/contact`, label: 'Demander une inscription' }}
 />
 
 <style>
