@@ -15,9 +15,14 @@ Sources principales :
 - Offre, tarifs, inscriptions : https://www.ecoledemusique3rivieres.com/services-6
 - Professeurs : https://www.ecoledemusique3rivieres.com/about
 - Contact : https://www.ecoledemusique3rivieres.com/contact-5
+- Material Symbols (icônes, documentation Google) : https://fonts.google.com/icons
 - Département de l’Ain, enseignement artistique : https://www.ain.fr/solutions/documentation-enseignement-artistique/
 - Fiche publique Infonet : https://infonet.fr/entreprises/41444401800025-ecole-de-musique-3-rivieres/
-- Articles locaux Le Progrès sur l’école et ses auditions
+- Articles locaux Le Progrès sur l’école et ses auditions, par exemple :
+  - https://www.leprogres.fr/societe/2025/05/28/le-festival-des-5-a-7-ouvre-sa-scene-aux-jeunes-talents (présidence, Trempl’Ain)
+  - https://www.leprogres.fr/societe/2025/06/30/l-audition-de-l-ecole-de-musique-cloture-l-annee-a-la-salle-des-fetes (audition, parrain)
+  - https://www.leprogres.fr/ain/2016/10/03/l-ecole-de-musique-des-trois-rivieres-continue-mais-reste-sur-le-fil (J.-F. Giroud)
+  - https://www.leprogres.fr/beaujolais/2016/09/10/de-romeo-a-georges-brize-40-ans-de-passion-pour-la-chanson (G. Brize)
 
 Attention : ne pas confondre avec l’École de Musique Les 3 Rivières EM3R basée à Saint-Jean-le-Vieux. Les informations EM3R ne doivent pas être reprises sans validation.
 
@@ -35,7 +40,8 @@ Courriel public départemental : afdcm-montmerle@laposte.net
 Site actuel : https://www.ecoledemusique3rivieres.com/
 
 Contacts publics :
-- Guillemette BOURMEYSTER : 06 62 03 03 84
+- Guillemette BOURMEYSTER : 06 62 03 03 84  
+  Rôle documenté dans la presse locale : présidente de l’école de musique de Montmerle-sur-Saône ; citée en mai 2025 dans le cadre du festival « des 5 à 7 » et de la scène ouverte « Trempl’Ain » (jeunes talents), avec le comité des fêtes. Source : https://www.leprogres.fr/societe/2025/05/28/le-festival-des-5-a-7-ouvre-sa-scene-aux-jeunes-talents
 
 Horaires : du lundi au samedi, sur rendez-vous.
 
@@ -75,6 +81,8 @@ Ensembles :
 
 ## 5. Professeurs connus
 
+Liste des disciplines telle que sur la page About du site officiel (https://www.ecoledemusique3rivieres.com/about) :
+
 - Alain BAGARD : violon, formation musicale
 - Mireille CHANTON : piano, accordéon
 - Jean-François GIROUD : flûte, saxophone
@@ -82,6 +90,34 @@ Ensembles :
 - Dominique SCHWEITZER : piano
 - Jean JOLY : batterie, groupe de percussions
 - Georges BRIZE : chant individuel
+
+### Détails publics complémentaires (recherche web, mai 2026)
+
+À faire valider par l’école avant toute publication sur le site. Ne pas fusionner avec des homonymes trouvés hors contexte Montmerle.
+
+**Alain BAGARD**  
+Aucune biographie musicale publique fiable en dehors du site de l’école. D’autres personnes homonymes apparaissent dans des contextes non musicaux (ex. nominations professionnelles, vie locale) sans preuve de lien avec cet enseignant.
+
+**Mireille CHANTON**  
+Une fiche annuaire « Cours de chant Chanton Mireille » à L’Abergement-Clémenciat (01400) mentionne cours d’instrument et chant ; lien éventuel avec la même personne, non confirmé. Ne pas confondre avec Mireille Arrigoni (pianiste, chorale Résila, Jura).
+
+**Jean-François GIROUD**  
+Le Progrès (octobre 2016, école des Trois-Rivières à Montmerle) : présenté comme professeur de saxophone, avec photo. Source : https://www.leprogres.fr/ain/2016/10/03/l-ecole-de-musique-des-trois-rivieres-continue-mais-reste-sur-le-fil  
+Ne pas confondre avec Jean Giroud (1910–1997), organiste et compositeur, page Wikipédia homonyme sans rapport.
+
+**Franck RIGAUDIER**  
+Des profils web sous l’orthographe « Rigaudière », auteur-compositeur-interprète, parfois associés à Toulouse, sans mention de Montmerle : ne pas les attribuer à l’enseignant de l’école sans confirmation.
+
+**Dominique SCHWEITZER**  
+Ne pas confondre avec Dominique Schweizer (orthographe proche), pianiste et pédagogue documenté en Suisse (Fribourg, etc.), sans preuve d’identité commune.
+
+**Jean JOLY**  
+Agenda jazz Rhône-Alpes (janvier 2014) : un « Jean Joly » à la batterie (mention « jouets ») dans le groupe « Avenue Orlean’s », Jazz Club Saint-Georges, Lyon. Piste plausible géographiquement, non prouvée comme étant le professeur de Montmerle. Source : https://archives.jazz-rhone-alpes.com/140106/index.htm
+
+**Georges BRIZE**  
+Chanteur connu sous le nom de scène Roméo ; né le 29 janvier 1961 à Belleville-en-Beaujolais. Enfant-chanteur des années 1970 (ex. « Maman », 1973), produit notamment par Claude Carrère ; carrière d’enfant star puis reconversion (presse spécialisée, génériques TV évoqués dans les interviews). Formation vocale élargie (dont univers du lyrique, d’après Le Progrès 2016). Professeur de chant ; qualifié de ténor dans la presse locale.  
+Lien avec l’école : Le Progrès (juin 2025) indique que Roméo est le parrain de l’école ; l’audition de fin d’année s’est ouverte sur sa chanson « Chante bas, chante haut ». Source : https://www.leprogres.fr/societe/2025/06/30/l-audition-de-l-ecole-de-musique-cloture-l-annee-a-la-salle-des-fetes  
+Autres sources biographiques : https://fr.wikipedia.org/wiki/Rom%C3%A9o_(chanteur), https://www.leprogres.fr/beaujolais/2016/09/10/de-romeo-a-georges-brize-40-ans-de-passion-pour-la-chanson
 
 ## 6. Paiement et aides
 
@@ -254,10 +290,18 @@ Couleurs en OKLCH uniquement :
 - info : bleu
 
 Typographie :
-- Font stack : -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif
-- Maximum 3 poids : regular, medium, semibold
-- Titres avec tracking légèrement négatif
-- Corps très lisible, line-height généreux
+- Police principale : **Inter** uniquement, au format **variable** (SIL Open Font License), distribuée en self-host ou via paquet npm (`@fontsource-variable/inter` ou équivalent). **Exclure** SF Pro, `-apple-system`, `BlinkMacSystemFont` et toute pile qui repose sur les polices système Apple : droits d’usage restreints et risque juridique ou de marque pour un site tiers.
+- **Optical size (`opsz`)** : utiliser la version variable d’Inter qui expose l’axe `opsz` ; activer `font-optical-sizing: auto` et, si besoin fin, relier `font-variation-settings: "opsz" …` à des **tokens** (corps, sous-titre, titre) alignés sur la taille de police cible, pour un rendu SOTA lisible à toutes les tailles.
+- Pile de secours neutre après Inter : `ui-sans-serif, sans-serif` (éviter `system-ui` seul sur macOS où il peut résoudre vers San Francisco).
+- Maximum 3 graisses sur l’axe `wght` : regular (400), medium (500), semibold (600).
+- Titres avec tracking légèrement négatif.
+- Corps très lisible, line-height généreux.
+
+Icônes :
+- Utiliser la famille **Material Symbols** de Google (successeur state-of-the-art de **Material Icons**, même catalogue élargi, licence **Apache 2.0**). Préférer une variante sobre alignée sur la DA : **Outlined** ou **Rounded**, une seule famille pour tout le site.
+- Format recommandé : **police variable** (axes `FILL`, `wght`, `GRAD`, `opsz` selon besoin) ou **SVG** tree-shaké / sous-ensemble pour limiter le poids ; intégration possible via paquets npm légers (`@material-symbols/font-*`, Iconify `material-symbols`, ou SVG inline générés).
+- Taille et couleur des glyphes rattachées aux **tokens** (couleur texte / accent, taille tactile minimum). Ne pas mélanger avec d’autres jeux d’icônes sans justification produit.
+- Accessibilité : icône purement décorative avec `aria-hidden="true"` et sens porté par le texte voisin ; si l’icône porte seule l’information, libellé accessible (`aria-label`, texte visible, ou `title` selon pattern retenu).
 
 Layout :
 - Grille basée sur multiples de 8
@@ -281,6 +325,7 @@ Rayons :
 ## 13. Composants
 
 Composants nécessaires :
+- Jeu d’icônes unique **Material Symbols** (navigation, CTA secondaires, listes, formulaire, footer)
 - Header sticky sobre
 - Navigation responsive
 - Hero
@@ -346,6 +391,7 @@ Stack projet actuelle :
 - npm
 - ESLint
 - Prettier
+- Icônes : Material Symbols (famille Material Icons, Google, Apache 2.0)
 
 Exigences :
 - Site statique ou SSR léger selon hébergement.
@@ -365,7 +411,7 @@ Le site sera considéré conforme si :
 - Les cours, professeurs, inscription et lieu sont accessibles en un clic depuis la navigation.
 - La DA est premium, blanche, sobre et cohérente.
 - Aucune information non sourcée n’est inventée.
-- Les règles design sont respectées : tokens, OKLCH, pas de blur, pas de shadow, pas de valeurs hardcodées.
+- Les règles design sont respectées : tokens, OKLCH, pas de blur, pas de shadow, pas de valeurs hardcodées ; typographie **Inter** variable avec `opsz`, sans SF ni stack système Apple pour le texte ; **Material Symbols** pour les icônes, avec règles d’accessibilité.
 - Le site est utilisable au clavier et sur mobile.
 - Le contenu distingue clairement l’école de Montmerle de l’EM3R de Saint-Jean-le-Vieux.
 
