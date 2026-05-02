@@ -35,8 +35,7 @@ Courriel public départemental : afdcm-montmerle@laposte.net
 Site actuel : https://www.ecoledemusique3rivieres.com/
 
 Contacts publics :
-- Michèle Reboul : 06 62 03 03 84
-- Cécile Maret : 06 20 74 80 66
+- Guillemette BOURMEYSTER : 06 62 03 03 84
 
 Horaires : du lundi au samedi, sur rendez-vous.
 
@@ -76,12 +75,13 @@ Ensembles :
 
 ## 5. Professeurs connus
 
-- Alain Bagard : violon, formation musicale
-- Mireille Chanton : piano, accordéon
-- Jean-François Giroud : flûte, saxophone
-- Franck Rigaudier : guitare, chant, formation musicale
-- Dominique Schweitzer : piano
-- Jean Joly : batterie, groupe de percussions
+- Alain BAGARD : violon, formation musicale
+- Mireille CHANTON : piano, accordéon
+- Jean-François GIROUD : flûte, saxophone
+- Franck RIGAUDIER : guitare, chant, formation musicale
+- Dominique SCHWEITZER : piano
+- Jean JOLY : batterie, groupe de percussions
+- Georges BRIZE : chant individuel
 
 ## 6. Paiement et aides
 
