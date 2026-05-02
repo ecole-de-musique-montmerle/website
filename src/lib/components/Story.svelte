@@ -64,7 +64,7 @@
 
 	.story__grid {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+		grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
 		gap: clamp(var(--space-6), 5vw, var(--space-10));
 		align-items: start;
 	}
