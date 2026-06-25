@@ -62,13 +62,6 @@
 		max-width: var(--measure-2xs);
 	}
 
-	.announcement__lede {
-		font-size: var(--font-size-base);
-		line-height: var(--line-height-body);
-		max-width: var(--measure-lg);
-		color: var(--color-text-on-dark-muted);
-	}
-
 	.announcement__media {
 		justify-self: end;
 		width: 100%;

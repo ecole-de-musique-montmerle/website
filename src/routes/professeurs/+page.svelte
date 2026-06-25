@@ -56,18 +56,10 @@
 					</div>
 
 					<div class="teacher__body">
-						<ul class="teacher__disciplines list-unstyled" role="list">
-							{#each teacher.disciplines as discipline (discipline)}
-								<li class="teacher__discipline">{discipline}</li>
-							{/each}
-						</ul>
 						<h2 id={`${teacher.slug}-name`} class="teacher__name">
 							{teacher.firstName}
 							{teacher.lastName}
 						</h2>
-						{#if teacher.badge}
-							<p class="teacher__badge">{teacher.badge}</p>
-						{/if}
 						<p class="teacher__bio">
 							{#if teacher.bio}
 								{teacher.bio}
@@ -130,42 +122,10 @@
 		max-width: var(--measure-2xl);
 	}
 
-	.teacher__disciplines {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-	}
-
-	.teacher__discipline {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
-		padding: var(--space-1) var(--space-3);
-		border: var(--border-thin) solid oklch(from var(--color-noir) l c h / var(--opacity-2));
-		border-radius: var(--radius-pill);
-		color: var(--color-text-secondary);
-	}
-
 	.teacher__name {
 		font-size: var(--font-size-4xl);
 		line-height: var(--line-height-heading);
 		letter-spacing: var(--tracking-tight);
-	}
-
-	.teacher__badge {
-		display: inline-flex;
-		align-self: flex-start;
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		letter-spacing: var(--tracking-wide);
-		text-transform: uppercase;
-		padding: var(--space-1) var(--space-3);
-		color: var(--color-noir);
-		background-color: var(--color-gold);
-		border-radius: var(--radius-pill);
 	}
 
 	.teacher__bio {

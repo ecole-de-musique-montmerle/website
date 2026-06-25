@@ -17,7 +17,10 @@
 	/>
 </svelte:head>
 
-<PageHero title="La vie de l'école" />
+<PageHero
+	title="La vie de l'école"
+	lede="Inscriptions, ateliers et moments associatifs. Retrouvez les nouvelles de l'École de Musique 3 Rivières."
+/>
 
 <section class="page-section page-section--light" aria-labelledby="actualites-list">
 	<div class="container">

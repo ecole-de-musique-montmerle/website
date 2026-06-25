@@ -29,12 +29,16 @@
 		background-color: var(--color-surface-primary);
 		color: var(--color-text-on-dark);
 		padding-block: clamp(var(--space-9), 5vw, var(--space-12)) var(--section-padding-y);
+		min-height: var(--hero-min-height);
+		display: flex;
+		align-items: end;
 	}
 
 	.page-hero__inner {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-8);
+		display: grid;
+		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+		gap: clamp(var(--space-6), 6vw, var(--space-11));
+		align-items: end;
 	}
 
 	.page-hero__heading {
@@ -63,5 +67,13 @@
 		line-height: var(--line-height-body);
 		color: var(--color-text-on-dark-muted);
 		max-width: var(--measure-2xl);
+	}
+
+	@media (max-width: 48rem) {
+		.page-hero__inner {
+			grid-template-columns: 1fr;
+			gap: var(--space-6);
+			align-items: start;
+		}
 	}
 </style>

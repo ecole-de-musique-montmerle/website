@@ -53,12 +53,6 @@
 		letter-spacing: var(--tracking-tight);
 	}
 
-	.news-preview__lede {
-		font-size: var(--font-size-md);
-		line-height: var(--line-height-body);
-		color: var(--color-text-secondary);
-	}
-
 	.news-preview__grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));

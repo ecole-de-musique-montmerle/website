@@ -37,12 +37,6 @@
 		max-width: var(--measure-xs);
 	}
 
-	.ensembles__lede {
-		font-size: var(--font-size-md);
-		color: var(--color-text-secondary);
-		max-width: var(--measure-xl);
-	}
-
 	.ensembles__list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));

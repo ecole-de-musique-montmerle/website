@@ -43,6 +43,7 @@
 		background-color: var(--color-paper);
 		border-radius: var(--radius-md);
 		overflow: hidden;
+		box-shadow: 0 1px 3px oklch(from var(--color-noir) l c h / 0.08);
 	}
 
 	.card__link {

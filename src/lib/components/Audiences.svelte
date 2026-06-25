@@ -13,11 +13,6 @@
 			{#each audiences as audience (audience.title)}
 				<li class="audiences__item">
 					<article class="card">
-						<div class="card__head">
-							<h3 class="card__title">{audience.title}</h3>
-							<p class="card__meta meta-label">{audience.meta}</p>
-							<p class="card__body">{audience.body}</p>
-						</div>
 						<div class="card__media">
 							{#if audience.photo}
 								<img
@@ -32,6 +27,10 @@
 							{:else}
 								<Placeholder aspect="4 / 3" radius="sm" label={audience.label} />
 							{/if}
+						</div>
+						<div class="card__head">
+							<h3 class="card__title">{audience.title}</h3>
+							<p class="card__meta meta-label">{audience.meta}</p>
 						</div>
 					</article>
 				</li>
@@ -69,7 +68,6 @@
 		--card-pad: clamp(var(--space-5), 2vw, var(--space-7));
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-6);
 		background-color: var(--color-paper);
 		border-radius: var(--radius-md);
 		overflow: hidden;
@@ -91,16 +89,6 @@
 
 	.card__meta {
 		color: var(--color-text-secondary);
-	}
-
-	.card__body {
-		font-size: var(--font-size-sm);
-		line-height: var(--line-height-body);
-		color: var(--color-text-primary);
-	}
-
-	.card__media {
-		margin-block-start: auto;
 	}
 
 	.card__photo {

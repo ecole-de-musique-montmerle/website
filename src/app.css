@@ -188,6 +188,9 @@
 		/* Cible tactile minimale (WCAG 2.5.5 — 44px). */
 		--tap-target: 44px;
 
+		/* Hauteur minimale des hero sections. */
+		--hero-min-height: 50vh;
+
 		--motion-fast: 150ms;
 		--motion-normal: 220ms;
 		--motion-slow: 380ms;
@@ -457,6 +460,7 @@
 		padding: clamp(var(--space-5), 2vw, var(--space-6));
 		background-color: var(--color-paper);
 		border-radius: var(--radius-md);
+		box-shadow: 0 1px 3px oklch(from var(--color-noir) l c h / 0.08);
 	}
 
 	.card-base__title {
