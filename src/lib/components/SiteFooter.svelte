@@ -1,18 +1,18 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import Logo from './Logo.svelte';
 
 	const footerLinks = [
-		{ href: `${base}/cours`, label: 'Cours' },
-		{ href: `${base}/professeurs`, label: 'Professeurs' },
-		{ href: `${base}/inscription`, label: 'Inscription' },
-		{ href: `${base}/contact`, label: 'Contact' }
+		{ href: resolve('/cours'), label: 'Cours' },
+		{ href: resolve('/professeurs'), label: 'Professeurs' },
+		{ href: resolve('/inscription'), label: 'Inscription' },
+		{ href: resolve('/contact'), label: 'Contact' }
 	];
 
 	const legalLinks = [
-		{ href: `${base}/mentions-legales`, label: 'Mentions légales' },
-		{ href: `${base}/confidentialite`, label: 'Confidentialité' },
-		{ href: `${base}/accessibilite`, label: 'Accessibilité' }
+		{ href: resolve('/mentions-legales'), label: 'Mentions légales' },
+		{ href: resolve('/confidentialite'), label: 'Confidentialité' },
+		{ href: resolve('/accessibilite'), label: 'Accessibilité' }
 	];
 
 	const currentYear = new Date().getFullYear();
@@ -35,7 +35,7 @@
 	<div class="container">
 		<div class="site-footer__top">
 			<Logo
-				href={`${base}/`}
+				href={resolve('/')}
 				tone="inherit"
 				ariaLabel="École de Musique 3 Rivières, retour à l'accueil"
 			/>
@@ -57,7 +57,7 @@
 							class="site-footer__social"
 							href={social.href}
 							target="_blank"
-							rel="noopener noreferrer"
+							rel="noopener noreferrer external"
 							aria-label={social.label}
 						>
 							<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -77,16 +77,11 @@
 				01090 Montmerle-sur-Saône
 			</address>
 
-			<a
-				class="site-footer__contact"
-				href="mailto:ecolemusiquemontmerle3r@gmail.com"
-			>
+			<a class="site-footer__contact" href="mailto:ecolemusiquemontmerle3r@gmail.com">
 				ecolemusiquemontmerle3r@gmail.com
 			</a>
 
-			<a class="site-footer__contact" href="tel:+33673714699">
-				06 73 71 46 99
-			</a>
+			<a class="site-footer__contact" href="tel:+33673714699"> 06 73 71 46 99 </a>
 		</div>
 
 		<div class="site-footer__rule" role="presentation"></div>

@@ -1,26 +1,20 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
 
 	const paiementEcheances = [
-		{ title: 'En une fois', body: 'Au moment de l\'inscription.' },
-		{ title: 'En trois fois', body: 'Sur l\'année scolaire, sans frais.' },
+		{ title: 'En une fois', body: "Au moment de l'inscription." },
+		{ title: 'En trois fois', body: "Sur l'année scolaire, sans frais." },
 		{ title: 'En neuf fois', body: 'Mensuellement, de septembre à mai.' }
 	];
 
-	const moyens = [
-		'Chèque',
-		'Espèces',
-		'Chèques vacances',
-		'Virement mensuel',
-		'Bons CAF'
-	];
+	const moyens = ['Chèque', 'Espèces', 'Chèques vacances', 'Virement mensuel', 'Bons CAF'];
 
 	const reductions = [
 		{
 			title: '5 % à partir du 2e élève',
-			body: 'Réduction appliquée sur le montant total à partir d\'un second élève inscrit dans la famille.'
+			body: "Réduction appliquée sur le montant total à partir d'un second élève inscrit dans la famille."
 		},
 		{
 			title: '8 % à partir du 3e élève',
@@ -28,11 +22,11 @@
 		},
 		{
 			title: '5 % pour le 2e instrument',
-			body: 'Pour un même élève qui pratique deux instruments à l\'école.'
+			body: "Pour un même élève qui pratique deux instruments à l'école."
 		},
 		{
 			title: 'Subvention mairie 50 €',
-			body: 'Pour les enfants résidant à Montmerle-sur-Saône, via le ticket sport et culture fourni par l\'école.'
+			body: "Pour les enfants résidant à Montmerle-sur-Saône, via le ticket sport et culture fourni par l'école."
 		}
 	];
 </script>
@@ -76,8 +70,7 @@
 		<header class="block__header">
 			<h2 id="moyens" class="block__title">Moyens de paiement acceptés</h2>
 			<p class="block__lede">
-				Plusieurs solutions pour faciliter la prise en charge, y compris via les
-				dispositifs d'aide.
+				Plusieurs solutions pour faciliter la prise en charge, y compris via les dispositifs d'aide.
 			</p>
 		</header>
 
@@ -94,8 +87,8 @@
 		<header class="block__header">
 			<h2 id="reductions" class="block__title">Réductions et aides</h2>
 			<p class="block__lede">
-				L'école applique des réductions familiales et bénéficie d'une subvention de la
-				mairie pour les enfants montmerlois.
+				L'école applique des réductions familiales et bénéficie d'une subvention de la mairie pour
+				les enfants montmerlois.
 			</p>
 		</header>
 
@@ -109,8 +102,8 @@
 		</ul>
 
 		<p class="disclaimer">
-			Les tarifs détaillés par discipline et durée de cours sont communiqués lors de la
-			prise de contact, après validation par l'école.
+			Les tarifs détaillés par discipline et durée de cours sont communiqués lors de la prise de
+			contact, après validation par l'école.
 		</p>
 	</div>
 </section>
@@ -118,7 +111,7 @@
 <EndCta
 	title="Prêt à inscrire votre élève&nbsp;?"
 	lede="Échangez avec nous pour choisir le cours, l'instrument et la formule de paiement adaptés."
-	cta={{ href: `${base}/contact`, label: 'Demander une inscription' }}
+	cta={{ href: resolve('/contact'), label: 'Demander une inscription' }}
 />
 
 <style>

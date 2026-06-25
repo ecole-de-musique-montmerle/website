@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import friendsPhoto from '$lib/assets/photos/friends.png';
 	import Button from './Button.svelte';
 </script>
@@ -12,11 +12,11 @@
 					Les inscriptions de l'année 2026&#8209;2027 se préparent
 				</h2>
 				<p class="announcement__lede">
-					Contactez-nous pour plus d'informations. Nous serons ravis d'échanger avec
-					vous et de vous présenter le projet pédagogique de l'école.
+					Contactez-nous pour plus d'informations. Nous serons ravis d'échanger avec vous et de vous
+					présenter le projet pédagogique de l'école.
 				</p>
 			</div>
-			<Button href={`${base}/contact`}>Contactez-nous</Button>
+			<Button href={resolve('/contact')}>Contactez-nous</Button>
 		</div>
 		<div class="announcement__media">
 			<img

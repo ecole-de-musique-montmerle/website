@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
 
@@ -86,8 +86,8 @@
 		<header class="block__header">
 			<h2 id="cours-individuels" class="block__title">Cours individuels</h2>
 			<p class="block__lede">
-				Pratique instrumentale en face à face avec un professeur, pour découvrir, progresser
-				ou reprendre un instrument à son rythme.
+				Pratique instrumentale en face à face avec un professeur, pour découvrir, progresser ou
+				reprendre un instrument à son rythme.
 			</p>
 		</header>
 
@@ -111,8 +111,7 @@
 		<header class="block__header">
 			<h2 id="voix" class="block__title">Voix et chorales</h2>
 			<p class="block__lede">
-				Pratique vocale individuelle ou collective, accompagnée par des professeurs
-				expérimentés.
+				Pratique vocale individuelle ou collective, accompagnée par des professeurs expérimentés.
 			</p>
 		</header>
 
@@ -153,8 +152,8 @@
 		<header class="block__header">
 			<h2 id="ensembles" class="block__title">Ensembles et ateliers</h2>
 			<p class="block__lede">
-				Pratiquer ensemble, monter un répertoire, jouer en concert. Les ensembles sont le
-				cœur vivant de l'école.
+				Pratiquer ensemble, monter un répertoire, jouer en concert. Les ensembles sont le cœur
+				vivant de l'école.
 			</p>
 		</header>
 
@@ -173,7 +172,7 @@
 <EndCta
 	title="Une question sur les cours&nbsp;?"
 	lede="Nous vous présentons l'école et accompagnons votre choix d'instrument ou d'ensemble."
-	cta={{ href: `${base}/contact`, label: 'Contactez-nous' }}
+	cta={{ href: resolve('/contact'), label: 'Contactez-nous' }}
 />
 
 <style>

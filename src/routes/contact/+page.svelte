@@ -46,9 +46,7 @@
 				<dt>Téléphone</dt>
 				<dd>
 					<a class="contact-link" href="tel:+33673714699">06 73 71 46 99</a>
-					<span class="contact-meta">
-						Guillemette Bourmeyster, présidente
-					</span>
+					<span class="contact-meta"> Guillemette Bourmeyster, présidente </span>
 				</dd>
 			</div>
 
@@ -74,8 +72,7 @@
 		<header class="block__header">
 			<h2 id="lieux" class="block__title">Lieux des cours</h2>
 			<p class="block__lede">
-				Les cours se déroulent à Montmerle-sur-Saône, dans deux lieux dédiés au cœur du
-				village.
+				Les cours se déroulent à Montmerle-sur-Saône, dans deux lieux dédiés au cœur du village.
 			</p>
 		</header>
 

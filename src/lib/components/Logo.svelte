@@ -1,11 +1,13 @@
 <script lang="ts">
+	import type { ResolvedPathname } from '$app/types';
+
 	type Variant = 'horizontal' | 'stacked' | 'mark';
 	type Tone = 'accent' | 'inherit';
 
 	type Props = {
 		variant?: Variant;
 		tone?: Tone;
-		href?: string;
+		href?: ResolvedPathname;
 		ariaLabel?: string;
 	};
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
 	import Placeholder from '$lib/components/Placeholder.svelte';
@@ -97,6 +97,7 @@
 	};
 
 	const schemaJson = JSON.stringify(personSchema).replace(/<\/script/gi, '<\\/script');
+	const ldJson = `<script type="application/ld+json">${schemaJson}${'</' + 'script>'}`;
 </script>
 
 <svelte:head>
@@ -106,7 +107,8 @@
 		content="Sept professeurs de l'École de Musique 3 Rivières à Montmerle-sur-Saône : Alain Bagard, Mireille Chanton, Jean-François Giroud, Franck Rigaudier, Dominique Schweitzer, Jean Joly et Georges Brize, parrain de l'école."
 	/>
 
-	{@html `<script type="application/ld+json">${schemaJson}</script>`}
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- JSON-LD schema, contenu entièrement contrôlé -->
+	{@html ldJson}
 </svelte:head>
 
 <PageHero
@@ -151,7 +153,8 @@
 							{/each}
 						</ul>
 						<h2 id={`${teacher.slug}-name`} class="teacher__name">
-							{teacher.firstName} {teacher.lastName}
+							{teacher.firstName}
+							{teacher.lastName}
 						</h2>
 						{#if teacher.badge}
 							<p class="teacher__badge">{teacher.badge}</p>
@@ -173,7 +176,7 @@
 <EndCta
 	title="Envie de rencontrer l'équipe&nbsp;?"
 	lede="Sur rendez-vous, du lundi au samedi, à Montmerle-sur-Saône."
-	cta={{ href: `${base}/contact`, label: 'Prendre contact' }}
+	cta={{ href: resolve('/contact'), label: 'Prendre contact' }}
 />
 
 <style>

@@ -1,10 +1,11 @@
 <script lang="ts">
+	import type { ResolvedPathname } from '$app/types';
 	import Button from './Button.svelte';
 
 	type Props = {
 		title: string;
 		lede?: string;
-		cta: { href: string; label: string };
+		cta: { href: ResolvedPathname; label: string };
 	};
 
 	let { title, lede, cta }: Props = $props();

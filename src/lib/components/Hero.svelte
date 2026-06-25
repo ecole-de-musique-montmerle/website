@@ -7,8 +7,8 @@
 		<div class="hero__copy">
 			<h1 id="hero-title" class="hero__title">Apprendre, jouer, partager.</h1>
 			<p class="hero__lede">
-				L'École de Musique 3 Rivières accueille enfants, ados et adultes à
-				Montmerle-sur-Saône. Cours individuels, chorales et ensembles, depuis 1997.
+				L'École de Musique 3 Rivières accueille enfants, ados et adultes à Montmerle-sur-Saône.
+				Cours individuels, chorales et ensembles, depuis 1997.
 			</p>
 		</div>
 		<div class="hero__media">

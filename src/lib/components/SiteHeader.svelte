@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import Button from './Button.svelte';
 	import Logo from './Logo.svelte';
 
 	const navItems = [
-		{ href: `${base}/cours`, label: 'Cours' },
-		{ href: `${base}/professeurs`, label: 'Professeurs' },
-		{ href: `${base}/inscription`, label: 'Inscription' }
+		{ href: resolve('/cours'), label: 'Cours' },
+		{ href: resolve('/professeurs'), label: 'Professeurs' },
+		{ href: resolve('/inscription'), label: 'Inscription' }
 	];
 
 	const pathname = $derived(page.url.pathname);
@@ -16,7 +16,7 @@
 <header class="site-header">
 	<div class="container site-header__inner">
 		<Logo
-			href={`${base}/`}
+			href={resolve('/')}
 			variant="mark"
 			ariaLabel="École de Musique 3 Rivières, retour à l'accueil"
 		/>
@@ -35,7 +35,7 @@
 					</li>
 				{/each}
 			</ul>
-			<Button href={`${base}/contact`} size="md">Contactez-nous</Button>
+			<Button href={resolve('/contact')} size="md">Contactez-nous</Button>
 		</nav>
 	</div>
 </header>

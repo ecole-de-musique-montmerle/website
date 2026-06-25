@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ResolvedPathname } from '$app/types';
 	import type { Snippet } from 'svelte';
 
 	type Variant = 'primary' | 'ghost';
@@ -7,7 +8,7 @@
 	type Props = {
 		variant?: Variant;
 		size?: Size;
-		href?: string;
+		href?: ResolvedPathname;
 		type?: 'button' | 'submit' | 'reset';
 		children: Snippet;
 		onclick?: (event: MouseEvent) => void;
