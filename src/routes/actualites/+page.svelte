@@ -13,14 +13,11 @@
 	<title>Actualités | École de Musique 3 Rivières</title>
 	<meta
 		name="description"
-		content="Auditions, concerts, vie associative et inscriptions : suivez l'actualité de l'École de Musique 3 Rivières à Montmerle-sur-Saône."
+		content="Vie associative et inscriptions : suivez l'actualité de l'École de Musique 3 Rivières à Montmerle-sur-Saône."
 	/>
 </svelte:head>
 
-<PageHero
-	title="La vie de l'école"
-	lede="Auditions, concerts, scène ouverte, ateliers et inscriptions. Retrouvez les moments qui font battre l'École de Musique 3 Rivières, à Montmerle-sur-Saône."
-/>
+<PageHero title="La vie de l'école" />
 
 <section class="page-section page-section--light" aria-labelledby="actualites-list">
 	<div class="container">
@@ -52,9 +49,9 @@
 
 <style>
 	.featured {
-		max-width: 48rem;
+		max-width: var(--media-max-xl);
 		margin-inline: auto;
-		margin-bottom: clamp(var(--space-8), 5vw, var(--space-11));
+		margin-block-end: clamp(var(--space-8), 5vw, var(--space-11));
 	}
 
 	.grid {

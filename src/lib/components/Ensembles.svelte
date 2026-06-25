@@ -7,9 +7,6 @@
 	<div class="container">
 		<header class="ensembles__header">
 			<h2 id="ensembles-title" class="ensembles__title">Les ensembles</h2>
-			<p class="ensembles__lede">
-				Quatre formations pour pratiquer ensemble, du premier éveil aux concerts publics.
-			</p>
 		</header>
 
 		<ul class="ensembles__list list-unstyled" role="list">
@@ -32,23 +29,23 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-4);
-		margin-bottom: clamp(var(--space-7), 5vw, var(--space-10));
+		margin-block-end: clamp(var(--space-7), 5vw, var(--space-10));
 	}
 
 	.ensembles__title {
 		font-size: var(--font-size-5xl);
-		max-width: 18ch;
+		max-width: var(--measure-xs);
 	}
 
 	.ensembles__lede {
 		font-size: var(--font-size-md);
 		color: var(--color-text-secondary);
-		max-width: 48ch;
+		max-width: var(--measure-xl);
 	}
 
 	.ensembles__list {
 		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
 		gap: clamp(var(--space-4), 2vw, var(--space-6));
 	}
 
@@ -64,11 +61,5 @@
 		font-size: var(--font-size-lg);
 		font-weight: var(--font-weight-medium);
 		letter-spacing: var(--tracking-tight);
-	}
-
-	@media (max-width: 48rem) {
-		.ensembles__list {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
 	}
 </style>

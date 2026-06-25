@@ -49,20 +49,20 @@
 		font-size: var(--font-size-display);
 		line-height: var(--line-height-display);
 		letter-spacing: var(--tracking-tight);
-		max-width: 16ch;
+		max-width: var(--measure-2xs);
 	}
 
 	.hero__lede {
 		font-size: var(--font-size-md);
 		line-height: var(--line-height-body);
-		max-width: 32ch;
+		max-width: var(--measure-md);
 		color: var(--color-text-on-dark-muted);
 	}
 
 	.hero__photo {
 		width: 100%;
 		height: auto;
-		aspect-ratio: 3 / 2;
+		aspect-ratio: var(--ratio-landscape);
 		object-fit: cover;
 		border-radius: var(--radius-md);
 	}
@@ -75,7 +75,7 @@
 		}
 
 		.hero__lede {
-			max-width: 48ch;
+			max-width: var(--measure-xl);
 		}
 	}
 </style>

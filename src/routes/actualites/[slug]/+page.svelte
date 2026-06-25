@@ -109,15 +109,17 @@
 	}
 
 	.article__back {
-		margin-bottom: var(--space-7);
+		margin-block-end: var(--space-7);
 	}
 
 	.article__back a {
 		transition: color var(--motion-fast) var(--ease-out);
 	}
 
-	.article__back a:hover {
-		color: var(--color-gold);
+	@media (hover: hover) {
+		.article__back a:hover {
+			color: var(--color-gold);
+		}
 	}
 
 	.article__meta {
@@ -125,7 +127,7 @@
 		align-items: center;
 		gap: var(--space-3);
 		flex-wrap: wrap;
-		margin-bottom: var(--space-5);
+		margin-block-end: var(--space-5);
 	}
 
 	.article__category {
@@ -148,16 +150,16 @@
 		font-size: var(--font-size-4xl);
 		line-height: var(--line-height-heading);
 		letter-spacing: var(--tracking-tight);
-		max-width: 22ch;
-		margin-bottom: var(--space-5);
+		max-width: var(--measure-sm);
+		margin-block-end: var(--space-5);
 	}
 
 	.article__excerpt {
 		font-size: var(--font-size-md);
 		line-height: var(--line-height-body);
 		color: var(--color-text-on-dark-muted);
-		max-width: 56ch;
-		margin-bottom: var(--space-4);
+		max-width: var(--measure-2xl);
+		margin-block-end: var(--space-4);
 	}
 
 	.article__author {
@@ -173,7 +175,7 @@
 	.article__cover img {
 		width: 100%;
 		height: auto;
-		aspect-ratio: 16 / 9;
+		aspect-ratio: var(--ratio-cinema);
 		object-fit: cover;
 	}
 
@@ -182,7 +184,7 @@
 	}
 
 	.article__content .prose {
-		max-width: 64ch;
+		max-width: var(--measure-3xl);
 		margin-inline: auto;
 	}
 
@@ -190,22 +192,22 @@
 		font-family: var(--font-body);
 		font-size: var(--font-size-sm);
 		color: var(--color-text-secondary);
-		padding-top: var(--space-6);
-		border-top: var(--border-thin) solid var(--color-line);
+		padding-block-start: var(--space-6);
+		border-block-start: var(--border-thin) solid var(--color-line);
 	}
 
 	.article__source a {
-		border-bottom: var(--border-thin) solid currentColor;
+		border-block-end: var(--border-thin) solid currentColor;
 	}
 
 	.article__related {
-		padding-top: 0;
+		padding-block-start: 0;
 	}
 
 	.article__related-title {
 		font-size: var(--font-size-3xl);
 		letter-spacing: var(--tracking-tight);
-		margin-bottom: clamp(var(--space-6), 4vw, var(--space-8));
+		margin-block-end: clamp(var(--space-6), 4vw, var(--space-8));
 	}
 
 	.grid {

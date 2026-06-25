@@ -10,6 +10,7 @@
 		size?: Size;
 		href?: ResolvedPathname;
 		type?: 'button' | 'submit' | 'reset';
+		class?: string;
 		children: Snippet;
 		onclick?: (event: MouseEvent) => void;
 	};
@@ -19,17 +20,18 @@
 		size = 'md',
 		href,
 		type = 'button',
+		class: className,
 		children,
 		onclick
 	}: Props = $props();
 </script>
 
 {#if href}
-	<a class={['btn', `btn--${variant}`, `btn--${size}`]} {href}>
+	<a class={['btn', `btn--${variant}`, `btn--${size}`, className]} {href}>
 		{@render children()}
 	</a>
 {:else}
-	<button class={['btn', `btn--${variant}`, `btn--${size}`]} {type} {onclick}>
+	<button class={['btn', `btn--${variant}`, `btn--${size}`, className]} {type} {onclick}>
 		{@render children()}
 	</button>
 {/if}
@@ -55,20 +57,18 @@
 	.btn--md {
 		padding: var(--space-3) var(--space-6);
 		font-size: var(--font-size-sm);
+		min-height: var(--tap-target);
 	}
 
 	.btn--sm {
 		padding: var(--space-2) var(--space-5);
 		font-size: var(--font-size-xs);
+		min-height: var(--tap-target);
 	}
 
 	.btn--primary {
 		background-color: var(--color-action);
 		color: var(--color-action-text);
-	}
-
-	.btn--primary:hover {
-		background-color: var(--color-action-hover);
 	}
 
 	.btn--ghost {
@@ -77,8 +77,14 @@
 		border: var(--border-thin) solid var(--color-action);
 	}
 
-	.btn--ghost:hover {
-		background-color: var(--color-action);
-		color: var(--color-action-text);
+	@media (hover: hover) {
+		.btn--primary:hover {
+			background-color: var(--color-action-hover);
+		}
+
+		.btn--ghost:hover {
+			background-color: var(--color-action);
+			color: var(--color-action-text);
+		}
 	}
 </style>

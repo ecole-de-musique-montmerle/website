@@ -11,10 +11,6 @@
 				<h2 id="announcement-title" class="announcement__title">
 					Les inscriptions de l'année 2026&#8209;2027 se préparent
 				</h2>
-				<p class="announcement__lede">
-					Contactez-nous pour plus d'informations. Nous serons ravis d'échanger avec vous et de vous
-					présenter le projet pédagogique de l'école.
-				</p>
 			</div>
 			<Button href={resolve('/contact')}>Contactez-nous</Button>
 		</div>
@@ -60,29 +56,29 @@
 	}
 
 	.announcement__title {
-		font-size: clamp(2rem, 2.4vw + 1rem, 3rem);
+		font-size: var(--font-size-announcement);
 		line-height: var(--line-height-heading);
 		letter-spacing: var(--tracking-tight);
-		max-width: 16ch;
+		max-width: var(--measure-2xs);
 	}
 
 	.announcement__lede {
 		font-size: var(--font-size-base);
 		line-height: var(--line-height-body);
-		max-width: 36ch;
+		max-width: var(--measure-lg);
 		color: var(--color-text-on-dark-muted);
 	}
 
 	.announcement__media {
 		justify-self: end;
 		width: 100%;
-		max-width: 42rem;
+		max-width: var(--media-max-lg);
 	}
 
 	.announcement__photo {
 		width: 100%;
 		height: auto;
-		aspect-ratio: 4 / 3;
+		aspect-ratio: var(--ratio-photo);
 		object-fit: cover;
 		border-radius: var(--radius-md);
 	}

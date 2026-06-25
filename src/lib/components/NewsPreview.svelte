@@ -13,9 +13,6 @@
 			<div class="news-preview__heading">
 				<h2 id="news-preview-title" class="news-preview__title">La vie de l'école</h2>
 			</div>
-			<p class="news-preview__lede">
-				Auditions, concerts, scène ouverte et moments associatifs à Montmerle-sur-Saône.
-			</p>
 		</header>
 
 		<ul class="news-preview__grid list-unstyled" role="list">
@@ -41,8 +38,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-4);
-		max-width: 56ch;
-		margin-bottom: clamp(var(--space-7), 4vw, var(--space-9));
+		max-width: var(--measure-2xl);
+		margin-block-end: clamp(var(--space-7), 4vw, var(--space-9));
 	}
 
 	.news-preview__heading {
@@ -79,6 +76,6 @@
 	.news-preview__cta {
 		display: flex;
 		justify-content: center;
-		margin-top: clamp(var(--space-7), 4vw, var(--space-9));
+		margin-block-start: clamp(var(--space-7), 4vw, var(--space-9));
 	}
 </style>

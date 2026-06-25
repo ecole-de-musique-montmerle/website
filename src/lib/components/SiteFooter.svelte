@@ -120,13 +120,9 @@
 	.site-footer__link {
 		font-size: var(--font-size-sm);
 		font-weight: var(--font-weight-medium);
-		padding-block: var(--space-2);
-		border-bottom: var(--border-thin) solid transparent;
+		padding-block: var(--space-3);
+		border-block-end: var(--border-thin) solid transparent;
 		transition: border-color var(--motion-fast) var(--ease-out);
-	}
-
-	.site-footer__link:hover {
-		border-bottom-color: currentColor;
 	}
 
 	.site-footer__socials {
@@ -140,29 +136,24 @@
 	.site-footer__social {
 		display: inline-grid;
 		place-items: center;
-		width: 2.5rem;
-		height: 2.5rem;
+		width: var(--tap-target);
+		height: var(--tap-target);
 		border-radius: var(--radius-pill);
-		background-color: oklch(from var(--color-ivoire) l c h / 0.12);
+		background-color: oklch(from var(--color-ivoire) l c h / var(--opacity-1));
 		color: currentColor;
 		transition:
 			background-color var(--motion-fast) var(--ease-out),
 			color var(--motion-fast) var(--ease-out);
 	}
 
-	.site-footer__social:hover {
-		background-color: var(--color-gold);
-		color: var(--color-noir);
-	}
-
 	.site-footer__social svg {
-		width: 1.125rem;
-		height: 1.125rem;
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
 
 	.site-footer__rule {
-		height: 1px;
-		background-color: oklch(from var(--color-ivoire) l c h / 0.2);
+		height: var(--divider);
+		background-color: oklch(from var(--color-ivoire) l c h / var(--opacity-3));
 		margin-block: clamp(var(--space-6), 4vw, var(--space-9));
 	}
 
@@ -181,16 +172,13 @@
 
 	.site-footer__contact {
 		justify-self: center;
-		border-bottom: var(--border-thin) solid transparent;
+		padding-block: var(--space-3);
+		border-block-end: var(--border-thin) solid transparent;
 		transition: border-color var(--motion-fast) var(--ease-out);
 	}
 
 	.site-footer__contact:last-of-type {
 		justify-self: end;
-	}
-
-	.site-footer__contact:hover {
-		border-bottom-color: currentColor;
 	}
 
 	.site-footer__legal {
@@ -200,7 +188,7 @@
 		justify-content: space-between;
 		gap: var(--space-4) var(--space-7);
 		font-size: var(--font-size-xs);
-		color: oklch(from var(--color-ivoire) l c h / 0.75);
+		color: oklch(from var(--color-ivoire) l c h / var(--opacity-6));
 	}
 
 	.site-footer__copyright {
@@ -218,11 +206,27 @@
 
 	.site-footer__legal-link {
 		font-weight: var(--font-weight-medium);
+		padding-block: var(--space-3);
 		transition: color var(--motion-fast) var(--ease-out);
 	}
 
-	.site-footer__legal-link:hover {
-		color: var(--color-ivoire);
+	@media (hover: hover) {
+		.site-footer__link:hover {
+			border-bottom-color: currentColor;
+		}
+
+		.site-footer__social:hover {
+			background-color: var(--color-gold);
+			color: var(--color-noir);
+		}
+
+		.site-footer__contact:hover {
+			border-bottom-color: currentColor;
+		}
+
+		.site-footer__legal-link:hover {
+			color: var(--color-ivoire);
+		}
 	}
 
 	@media (max-width: 48rem) {

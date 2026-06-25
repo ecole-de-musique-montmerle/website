@@ -27,7 +27,6 @@
 		</div>
 		<div class="card__body">
 			<div class="card__meta">
-				<span class="card__category">{article.category}</span>
 				<time class="card__date" datetime={article.date}>{formatDate(article.date)}</time>
 			</div>
 			<h2 id={`${article.slug}-title`} class="card__title">{article.title}</h2>
@@ -55,7 +54,7 @@
 
 	.card__media {
 		width: 100%;
-		aspect-ratio: 16 / 10;
+		aspect-ratio: var(--ratio-wide);
 		overflow: hidden;
 	}
 
@@ -63,11 +62,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform var(--motion-slow) var(--ease-out);
-	}
-
-	.card:hover .card__cover {
-		transform: scale(1.04);
 	}
 
 	.card__body {
@@ -83,18 +77,6 @@
 		align-items: center;
 		gap: var(--space-3);
 		flex-wrap: wrap;
-	}
-
-	.card__category {
-		font-family: var(--font-body);
-		font-size: var(--font-size-2xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
-		padding: var(--space-1) var(--space-3);
-		color: var(--color-noir);
-		background-color: var(--color-gold);
-		border-radius: var(--radius-pill);
 	}
 
 	.card__date {
@@ -119,20 +101,22 @@
 	}
 
 	.card__readmore {
-		margin-top: auto;
+		margin-block-start: auto;
 		font-family: var(--font-body);
 		font-size: var(--font-size-xs);
 		font-weight: var(--font-weight-medium);
 		text-transform: uppercase;
 		letter-spacing: var(--tracking-wide);
 		color: var(--color-blue);
-		padding-top: var(--space-2);
-		border-top: var(--border-thin) solid var(--color-line);
+		padding-block-start: var(--space-2);
+		border-block-start: var(--border-thin) solid var(--color-line);
 		transition: color var(--motion-fast) var(--ease-out);
 	}
 
-	.card:hover .card__readmore {
-		color: var(--color-gold-deep);
+	@media (hover: hover) {
+		.card:hover .card__readmore {
+			color: var(--color-gold-deep);
+		}
 	}
 
 	.card--featured .card__title {

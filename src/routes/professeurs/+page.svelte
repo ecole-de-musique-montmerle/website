@@ -112,13 +112,13 @@
 	}
 
 	.teacher__media {
-		max-width: 26rem;
+		max-width: var(--media-max-md);
 	}
 
 	.teacher__photo {
 		width: 100%;
 		height: auto;
-		aspect-ratio: 3 / 4;
+		aspect-ratio: var(--ratio-portrait);
 		object-fit: cover;
 		border-radius: var(--radius-sm);
 	}
@@ -127,7 +127,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-4);
-		max-width: 56ch;
+		max-width: var(--measure-2xl);
 	}
 
 	.teacher__disciplines {
@@ -143,7 +143,7 @@
 		text-transform: uppercase;
 		letter-spacing: var(--tracking-wide);
 		padding: var(--space-1) var(--space-3);
-		border: var(--border-thin) solid oklch(from var(--color-noir) l c h / 0.18);
+		border: var(--border-thin) solid oklch(from var(--color-noir) l c h / var(--opacity-2));
 		border-radius: var(--radius-pill);
 		color: var(--color-text-secondary);
 	}
@@ -186,7 +186,7 @@
 		}
 
 		.teacher__media {
-			max-width: 22rem;
+			max-width: var(--media-max-sm);
 		}
 	}
 </style>

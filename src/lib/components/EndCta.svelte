@@ -56,6 +56,6 @@
 		font-size: var(--font-size-base);
 		line-height: var(--line-height-body);
 		color: var(--color-text-on-dark-muted);
-		max-width: 56ch;
+		max-width: var(--measure-2xl);
 	}
 </style>

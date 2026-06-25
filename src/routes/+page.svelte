@@ -2,7 +2,6 @@
 	import Announcement from '$lib/components/Announcement.svelte';
 	import Audiences from '$lib/components/Audiences.svelte';
 	import Ensembles from '$lib/components/Ensembles.svelte';
-	import Gallery from '$lib/components/Gallery.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import NewsPreview from '$lib/components/NewsPreview.svelte';
 	import Story from '$lib/components/Story.svelte';
@@ -19,7 +18,6 @@
 <Hero />
 <Audiences />
 <Announcement />
-<Story />
-<Gallery />
 <Ensembles />
+<Story />
 <NewsPreview />

@@ -46,31 +46,19 @@
 	}
 
 	.audiences__header {
-		margin-bottom: clamp(var(--space-7), 5vw, var(--space-10));
+		margin-block-end: clamp(var(--space-7), 5vw, var(--space-10));
 	}
 
 	.audiences__title {
 		font-size: var(--font-size-5xl);
 		letter-spacing: var(--tracking-tight);
-		max-width: 16ch;
+		max-width: var(--measure-2xs);
 	}
 
 	.audiences__list {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
 		gap: clamp(var(--space-5), 3vw, var(--space-8));
-	}
-
-	@media (max-width: 60rem) {
-		.audiences__list {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
-	}
-
-	@media (max-width: 36rem) {
-		.audiences__list {
-			grid-template-columns: minmax(0, 1fr);
-		}
 	}
 
 	.audiences__item {
@@ -86,6 +74,7 @@
 		border-radius: var(--radius-md);
 		overflow: hidden;
 		height: 100%;
+		box-shadow: 0 1px 3px oklch(from var(--color-noir) l c h / 0.08);
 	}
 
 	.card__head {
@@ -111,15 +100,15 @@
 	}
 
 	.card__media {
-		margin-top: auto;
+		margin-block-start: auto;
 	}
 
 	.card__photo {
 		width: 100%;
 		height: auto;
-		aspect-ratio: 4 / 3;
+		aspect-ratio: var(--ratio-photo);
 		object-fit: cover;
-		object-position: center 30%;
+		object-position: var(--object-pos-portrait);
 		border-radius: 0;
 	}
 </style>

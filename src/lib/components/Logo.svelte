@@ -59,7 +59,7 @@
 		gap: var(--space-3);
 		color: inherit;
 		font-family: var(--font-display);
-		line-height: 1.05;
+		line-height: var(--line-height-display);
 	}
 
 	.logo__mark {
@@ -69,8 +69,8 @@
 	}
 
 	.logo__mark svg {
-		width: 2.25rem;
-		height: 2.25rem;
+		width: var(--logo-size);
+		height: var(--logo-size);
 	}
 
 	.logo--tone-accent .logo__mark {
@@ -90,8 +90,8 @@
 	}
 
 	.logo__line--top {
-		font-size: 0.78rem;
-		color: oklch(from currentColor l c h / 0.7);
+		font-size: var(--logo-text);
+		color: oklch(from currentColor l c h / var(--opacity-5));
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-regular);
 		letter-spacing: var(--tracking-wide);
@@ -110,8 +110,8 @@
 	}
 
 	.logo--stacked .logo__mark svg {
-		width: 4rem;
-		height: 4rem;
+		width: var(--logo-size-mobile);
+		height: var(--logo-size-mobile);
 	}
 
 	.logo--stacked .logo__line--bottom {

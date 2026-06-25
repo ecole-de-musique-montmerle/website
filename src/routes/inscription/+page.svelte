@@ -113,8 +113,9 @@
 		font-size: var(--font-size-sm);
 		line-height: var(--line-height-body);
 		color: var(--color-text-secondary);
-		max-width: 64ch;
-		padding-top: var(--space-3);
-		border-top: var(--border-thin) solid oklch(from var(--color-noir) l c h / 0.12);
+		max-width: var(--measure-3xl);
+		padding-block-start: var(--space-3);
+		border-block-start: var(--border-thin) solid
+			oklch(from var(--color-noir) l c h / var(--opacity-1));
 	}
 </style>

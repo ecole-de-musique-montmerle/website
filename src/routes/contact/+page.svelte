@@ -113,22 +113,24 @@
 	}
 
 	.contact-link {
-		border-bottom: var(--border-thin) solid currentColor;
+		border-block-end: var(--border-thin) solid currentColor;
 		transition: color var(--motion-fast) var(--ease-out);
-	}
-
-	.contact-link:hover {
-		color: var(--color-blue);
 	}
 
 	.contact-meta {
 		display: block;
-		margin-top: var(--space-1);
+		margin-block-start: var(--space-1);
 		font-family: var(--font-body);
 		font-size: var(--font-size-xs);
 		font-weight: var(--font-weight-regular);
 		letter-spacing: var(--tracking-normal);
 		color: var(--color-text-secondary);
+	}
+
+	@media (hover: hover) {
+		.contact-link:hover {
+			color: var(--color-blue);
+		}
 	}
 
 	.cards {
