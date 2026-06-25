@@ -3,14 +3,9 @@
 	import { page } from '$app/state';
 	import Button from './Button.svelte';
 	import Logo from './Logo.svelte';
+	import { MAIN_NAV, resolveNav } from '$lib/data/navigation';
 
-	const navItems = [
-		{ href: resolve('/cours'), label: 'Cours' },
-		{ href: resolve('/professeurs'), label: 'Professeurs' },
-		{ href: resolve('/inscription'), label: 'Inscription' },
-		{ href: resolve('/actualites'), label: 'Actualités' }
-	];
-
+	const navItems = resolveNav(MAIN_NAV);
 	const pathname = $derived(page.url.pathname);
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import friendsPhoto from '$lib/assets/photos/friends.png';
+	import friendsPhoto from '$lib/assets/photos/friends.webp';
 	import Button from './Button.svelte';
 </script>
 

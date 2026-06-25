@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ResolvedPathname } from '$app/types';
 	import type { Actualite } from '$lib/data/actualites';
-	import { formatDate } from '$lib/data/actualites';
+	import { formatDate } from '$lib/utils/date';
 
 	type Props = {
 		article: Actualite;

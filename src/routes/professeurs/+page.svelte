@@ -3,99 +3,9 @@
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
 	import Placeholder from '$lib/components/Placeholder.svelte';
+	import { professeurs, buildProfesseursSchema } from '$lib/data/professeurs';
 
-	type Teacher = {
-		slug: string;
-		firstName: string;
-		lastName: string;
-		disciplines: string[];
-		badge?: string;
-		bio?: string;
-		photo?: { src: string; width: number; height: number };
-	};
-
-	const teachers: Teacher[] = [
-		{
-			slug: 'alain-bagard',
-			firstName: 'Alain',
-			lastName: 'Bagard',
-			disciplines: ['Violon', 'Formation musicale']
-		},
-		{
-			slug: 'mireille-chanton',
-			firstName: 'Mireille',
-			lastName: 'Chanton',
-			disciplines: ['Piano', 'Accordéon']
-		},
-		{
-			slug: 'jean-francois-giroud',
-			firstName: 'Jean-François',
-			lastName: 'Giroud',
-			disciplines: ['Flûte', 'Saxophone']
-		},
-		{
-			slug: 'franck-rigaudier',
-			firstName: 'Franck',
-			lastName: 'Rigaudier',
-			disciplines: ['Guitare', 'Chant', 'Formation musicale']
-		},
-		{
-			slug: 'dominique-schweitzer',
-			firstName: 'Dominique',
-			lastName: 'Schweitzer',
-			disciplines: ['Piano']
-		},
-		{
-			slug: 'jean-joly',
-			firstName: 'Jean',
-			lastName: 'Joly',
-			disciplines: ['Batterie', 'Groupe de percussions']
-		},
-		{
-			slug: 'georges-brize',
-			firstName: 'Georges',
-			lastName: 'Brize',
-			disciplines: ['Chant individuel'],
-			badge: "Parrain de l'école"
-		}
-	];
-
-	function formatJobTitle(disciplines: string[]): string {
-		const lower = disciplines.map((d) => d.toLowerCase());
-		if (lower.length === 0) return 'Professeur de musique';
-		if (lower.length === 1) return `Professeur de ${lower[0]}`;
-		const last = lower[lower.length - 1];
-		const head = lower.slice(0, -1).join(', ');
-		return `Professeur de ${head} et ${last}`;
-	}
-
-	const personSchema = {
-		'@context': 'https://schema.org',
-		'@type': 'ItemList',
-		name: "Équipe pédagogique de l'École de Musique 3 Rivières",
-		itemListElement: teachers.map((teacher, index) => ({
-			'@type': 'ListItem',
-			position: index + 1,
-			item: {
-				'@type': 'Person',
-				name: `${teacher.firstName} ${teacher.lastName}`,
-				jobTitle: formatJobTitle(teacher.disciplines),
-				knowsAbout: teacher.disciplines,
-				worksFor: {
-					'@type': 'EducationalOrganization',
-					name: 'École de Musique 3 Rivières',
-					address: {
-						'@type': 'PostalAddress',
-						streetAddress: '29 rue des Minimes',
-						postalCode: '01090',
-						addressLocality: 'Montmerle-sur-Saône',
-						addressCountry: 'FR'
-					}
-				}
-			}
-		}))
-	};
-
+	const personSchema = buildProfesseursSchema();
 	const schemaJson = JSON.stringify(personSchema).replace(/<\/script/gi, '<\\/script');
 	const ldJson = `<script type="application/ld+json">${schemaJson}${'</' + 'script>'}`;
 </script>
@@ -119,7 +29,7 @@
 <section class="page-section page-section--light" aria-label="Liste des professeurs">
 	<div class="container">
 		<div class="teachers">
-			{#each teachers as teacher, i (teacher.slug)}
+			{#each professeurs as teacher, i (teacher.slug)}
 				<article
 					id={teacher.slug}
 					class={['teacher', i % 2 === 1 && 'teacher--reverse']}
@@ -146,7 +56,7 @@
 					</div>
 
 					<div class="teacher__body">
-						<ul class="teacher__disciplines" role="list">
+						<ul class="teacher__disciplines list-unstyled" role="list">
 							{#each teacher.disciplines as discipline (discipline)}
 								<li class="teacher__discipline">{discipline}</li>
 							{/each}
@@ -224,9 +134,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2);
-		list-style: none;
-		padding: 0;
-		margin: 0;
 	}
 
 	.teacher__discipline {

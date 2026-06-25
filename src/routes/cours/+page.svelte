@@ -2,70 +2,7 @@
 	import { resolve } from '$app/paths';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
-
-	const instrumentFamilies = [
-		{
-			family: 'Claviers',
-			items: ['Piano', 'Synthétiseur', 'Accordéon']
-		},
-		{
-			family: 'Cordes',
-			items: ['Violon', 'Guitare sèche', 'Guitare électrique', 'Basse']
-		},
-		{
-			family: 'Vents',
-			items: ['Saxophone', 'Flûte', 'Trompette']
-		},
-		{
-			family: 'Percussions',
-			items: ['Batterie']
-		}
-	];
-
-	const voix = [
-		{ title: 'Chant individuel', meta: 'Tous niveaux' },
-		{ title: 'Chant en petit groupe', meta: 'À partir de l’adolescence' },
-		{ title: 'Chorale enfants', meta: '4 à 12 ans' },
-		{ title: 'Chorale adulte', meta: 'Tous niveaux' }
-	];
-
-	const formation = [
-		{
-			title: 'Solfège',
-			body: 'Lecture, rythme, écoute. Les bases de la lecture musicale, en lien avec la pratique instrumentale.'
-		},
-		{
-			title: 'Formation musicale',
-			body: 'Rattachée à l’apprentissage d’un instrument, pour faire dialoguer théorie et pratique.'
-		},
-		{
-			title: 'Éveil musical',
-			meta: '4 à 7 ans',
-			body: 'Premier contact avec le rythme, la voix et les instruments, dans un cadre ludique et collectif.'
-		}
-	];
-
-	const ensembles = [
-		{
-			title: 'Percussions de rue junior',
-			meta: 'À partir de 8 ans',
-			body: 'Atelier collectif de percussions traditionnelles et urbaines.'
-		},
-		{
-			title: 'Percussions de rue adulte',
-			body: 'Pratique régulière de percussions en groupe, accessible à tous les niveaux.'
-		},
-		{
-			title: 'Groupe rock et musiques actuelles ado',
-			meta: 'À partir de la 3e année d’instrument',
-			body: 'Mise en condition de groupe, répertoire pop-rock et musiques actuelles.'
-		},
-		{
-			title: 'Groupe jazz adulte',
-			meta: 'À partir de la 3e année d’instrument',
-			body: 'Improvisation, standards, lecture jazz, pratique en formation réduite.'
-		}
-	];
+	import { instrumentFamilies, voix, formation, ensembles } from '$lib/data/cours';
 </script>
 
 <svelte:head>
@@ -82,10 +19,10 @@
 />
 
 <section class="page-section page-section--light" aria-labelledby="cours-individuels">
-	<div class="container block">
-		<header class="block__header">
-			<h2 id="cours-individuels" class="block__title">Cours individuels</h2>
-			<p class="block__lede">
+	<div class="container block-stack">
+		<header class="block-header">
+			<h2 id="cours-individuels" class="block-title">Cours individuels</h2>
+			<p class="block-lede">
 				Pratique instrumentale en face à face avec un professeur, pour découvrir, progresser ou
 				reprendre un instrument à son rythme.
 			</p>
@@ -94,8 +31,8 @@
 		<div class="families">
 			{#each instrumentFamilies as family (family.family)}
 				<article class="family">
-					<h3 class="family__title">{family.family}</h3>
-					<ul class="family__items" role="list">
+					<h3 class="family__title meta-label">{family.family}</h3>
+					<ul class="family__items list-unstyled" role="list">
 						{#each family.items as instrument (instrument)}
 							<li>{instrument}</li>
 						{/each}
@@ -107,19 +44,19 @@
 </section>
 
 <section class="page-section page-section--light" aria-labelledby="voix">
-	<div class="container block">
-		<header class="block__header">
-			<h2 id="voix" class="block__title">Voix et chorales</h2>
-			<p class="block__lede">
+	<div class="container block-stack">
+		<header class="block-header">
+			<h2 id="voix" class="block-title">Voix et chorales</h2>
+			<p class="block-lede">
 				Pratique vocale individuelle ou collective, accompagnée par des professeurs expérimentés.
 			</p>
 		</header>
 
-		<ul class="items" role="list">
+		<ul class="items list-unstyled" role="list">
 			{#each voix as item (item.title)}
 				<li class="item">
 					<h3 class="item__title">{item.title}</h3>
-					<p class="item__meta">{item.meta}</p>
+					<p class="item__meta meta-label">{item.meta}</p>
 				</li>
 			{/each}
 		</ul>
@@ -127,19 +64,19 @@
 </section>
 
 <section class="page-section page-section--light" aria-labelledby="formation">
-	<div class="container block">
-		<header class="block__header">
-			<h2 id="formation" class="block__title">Formation et éveil</h2>
-			<p class="block__lede">
+	<div class="container block-stack">
+		<header class="block-header">
+			<h2 id="formation" class="block-title">Formation et éveil</h2>
+			<p class="block-lede">
 				Comprendre la musique, apprendre à lire et à écouter, dès le plus jeune âge.
 			</p>
 		</header>
 
-		<ul class="items items--detail" role="list">
+		<ul class="items items--detail list-unstyled" role="list">
 			{#each formation as item (item.title)}
 				<li class="item">
 					<h3 class="item__title">{item.title}</h3>
-					{#if item.meta}<p class="item__meta">{item.meta}</p>{/if}
+					{#if item.meta}<p class="item__meta meta-label">{item.meta}</p>{/if}
 					<p class="item__body">{item.body}</p>
 				</li>
 			{/each}
@@ -148,20 +85,20 @@
 </section>
 
 <section class="page-section page-section--light" aria-labelledby="ensembles">
-	<div class="container block">
-		<header class="block__header">
-			<h2 id="ensembles" class="block__title">Ensembles et ateliers</h2>
-			<p class="block__lede">
+	<div class="container block-stack">
+		<header class="block-header">
+			<h2 id="ensembles" class="block-title">Ensembles et ateliers</h2>
+			<p class="block-lede">
 				Pratiquer ensemble, monter un répertoire, jouer en concert. Les ensembles sont le cœur
 				vivant de l'école.
 			</p>
 		</header>
 
-		<ul class="items items--detail" role="list">
+		<ul class="items items--detail list-unstyled" role="list">
 			{#each ensembles as item (item.title)}
 				<li class="item">
 					<h3 class="item__title">{item.title}</h3>
-					{#if item.meta}<p class="item__meta">{item.meta}</p>{/if}
+					{#if item.meta}<p class="item__meta meta-label">{item.meta}</p>{/if}
 					<p class="item__body">{item.body}</p>
 				</li>
 			{/each}
@@ -176,30 +113,6 @@
 />
 
 <style>
-	.block {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(var(--space-6), 4vw, var(--space-9));
-	}
-
-	.block__header {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-4);
-		max-width: 56ch;
-	}
-
-	.block__title {
-		font-size: var(--font-size-4xl);
-		letter-spacing: var(--tracking-tight);
-	}
-
-	.block__lede {
-		font-size: var(--font-size-md);
-		line-height: var(--line-height-body);
-		color: var(--color-text-secondary);
-	}
-
 	.families {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
@@ -216,11 +129,6 @@
 	}
 
 	.family__title {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
 		color: var(--color-text-secondary);
 	}
 
@@ -228,9 +136,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-2);
-		list-style: none;
-		padding: 0;
-		margin: 0;
 		font-family: var(--font-display);
 		font-size: var(--font-size-lg);
 		font-weight: var(--font-weight-medium);
@@ -241,9 +146,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
 		gap: clamp(var(--space-5), 2vw, var(--space-7));
-		list-style: none;
-		padding: 0;
-		margin: 0;
 	}
 
 	.item {
@@ -261,11 +163,6 @@
 	}
 
 	.item__meta {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
 		color: var(--color-text-secondary);
 	}
 

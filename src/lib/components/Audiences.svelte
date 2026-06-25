@@ -1,55 +1,21 @@
 <script lang="ts">
-	import girlPhoto from '$lib/assets/photos/girl.png';
-	import percussionsPhoto from '$lib/assets/photos/percussions.png';
-	import pianoPhoto from '$lib/assets/photos/piano.png';
 	import Placeholder from './Placeholder.svelte';
-
-	type Audience = {
-		title: string;
-		meta: string;
-		body: string;
-		label: string;
-		photo?: { src: string; width: number; height: number };
-	};
-
-	const audiences: Audience[] = [
-		{
-			title: 'Les enfants',
-			meta: '4 à 10 ans',
-			body: "Éveil musical dès 4 ans, puis premiers cours d'instrument et chorale enfants, au rythme de chacun.",
-			label: 'Une jeune élève joue de la guitare acoustique en plein air',
-			photo: { src: girlPhoto, width: 1280, height: 1920 }
-		},
-		{
-			title: 'Les ados',
-			meta: '11 à 17 ans',
-			body: "Cours individuels d'instrument, chant, groupe rock et musiques actuelles à partir de la 3e année.",
-			label: 'Mains en train de jouer du piano',
-			photo: { src: pianoPhoto, width: 1920, height: 1440 }
-		},
-		{
-			title: 'Les adultes',
-			meta: 'Débutants ou reprise',
-			body: 'Cours individuels, chant en petit groupe, chorale adulte, percussions de rue et jazz adulte.',
-			label: 'Ensemble de percussions de rue défilant en formation',
-			photo: { src: percussionsPhoto, width: 1920, height: 1280 }
-		}
-	];
+	import { audiences } from '$lib/data/audiences';
 </script>
 
-<section class="audiences" aria-labelledby="audiences-title">
+<section class="audiences section-surface" aria-labelledby="audiences-title">
 	<div class="container">
 		<header class="audiences__header">
 			<h2 id="audiences-title" class="audiences__title">Pour tous les âges</h2>
 		</header>
 
-		<ul class="audiences__list" role="list">
+		<ul class="audiences__list list-unstyled" role="list">
 			{#each audiences as audience (audience.title)}
 				<li class="audiences__item">
 					<article class="card">
 						<div class="card__head">
 							<h3 class="card__title">{audience.title}</h3>
-							<p class="card__meta">{audience.meta}</p>
+							<p class="card__meta meta-label">{audience.meta}</p>
 							<p class="card__body">{audience.body}</p>
 						</div>
 						<div class="card__media">
@@ -76,13 +42,7 @@
 
 <style>
 	.audiences {
-		background-color: var(--color-surface-secondary);
-		color: var(--color-text-primary);
 		padding-block: var(--section-padding-y);
-		--color-action: var(--color-blue);
-		--color-action-text: var(--color-ivoire);
-		--color-action-hover: var(--color-blue-deep);
-		--color-action-focus: var(--color-blue);
 	}
 
 	.audiences__header {
@@ -99,8 +59,6 @@
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: clamp(var(--space-5), 3vw, var(--space-8));
-		list-style: none;
-		padding: 0;
 	}
 
 	@media (max-width: 60rem) {
@@ -120,12 +78,13 @@
 	}
 
 	.card {
+		--card-pad: clamp(var(--space-5), 2vw, var(--space-7));
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-6);
 		background-color: var(--color-paper);
 		border-radius: var(--radius-md);
-		padding: clamp(var(--space-5), 2vw, var(--space-7));
+		overflow: hidden;
 		height: 100%;
 	}
 
@@ -133,6 +92,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-3);
+		padding: var(--card-pad);
 	}
 
 	.card__title {
@@ -141,12 +101,7 @@
 	}
 
 	.card__meta {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
 		color: var(--color-text-secondary);
-		letter-spacing: var(--tracking-wide);
-		text-transform: uppercase;
 	}
 
 	.card__body {
@@ -165,6 +120,6 @@
 		aspect-ratio: 4 / 3;
 		object-fit: cover;
 		object-position: center 30%;
-		border-radius: var(--radius-sm);
+		border-radius: 0;
 	}
 </style>

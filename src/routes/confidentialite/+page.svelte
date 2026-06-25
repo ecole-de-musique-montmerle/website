@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHero from '$lib/components/PageHero.svelte';
+	import { ETABLISSEMENT } from '$lib/data/etablissement';
 </script>
 
 <svelte:head>
@@ -28,9 +29,9 @@
 				<h2 id="responsable">Responsable du traitement</h2>
 				<p>
 					Le responsable du traitement des données collectées sur ce site est l'École de Musique 3
-					Rivières (AFDCM), 29 rue des Minimes, 01090 Montmerle-sur-Saône, joignable à
-					<a href="mailto:ecolemusiquemontmerle3r@gmail.com">
-						ecolemusiquemontmerle3r@gmail.com
+					Rivières (AFDCM), {ETABLISSEMENT.adresse.full}, joignable à
+					<a href="mailto:{ETABLISSEMENT.email}">
+						{ETABLISSEMENT.email}
 					</a>.
 				</p>
 			</section>
@@ -116,8 +117,8 @@
 				</ul>
 				<p>
 					Pour exercer ces droits ou pour toute question, vous pouvez écrire à
-					<a href="mailto:ecolemusiquemontmerle3r@gmail.com">
-						ecolemusiquemontmerle3r@gmail.com
+					<a href="mailto:{ETABLISSEMENT.email}">
+						{ETABLISSEMENT.email}
 					</a>. Une réponse vous sera apportée dans un délai d'un mois.
 				</p>
 			</section>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHero from '$lib/components/PageHero.svelte';
+	import { ETABLISSEMENT } from '$lib/data/etablissement';
 </script>
 
 <svelte:head>
@@ -78,18 +79,18 @@
 				<dl>
 					<dt>Courriel</dt>
 					<dd>
-						<a href="mailto:ecolemusiquemontmerle3r@gmail.com">
-							ecolemusiquemontmerle3r@gmail.com
+						<a href="mailto:{ETABLISSEMENT.email}">
+							{ETABLISSEMENT.email}
 						</a>
 					</dd>
 
 					<dt>Téléphone</dt>
 					<dd>
-						<a href="tel:+33673714699">06 73 71 46 99</a>
+						<a href="tel:{ETABLISSEMENT.telephone.intl}">{ETABLISSEMENT.telephone.raw}</a>
 					</dd>
 
 					<dt>Adresse</dt>
-					<dd>29 rue des Minimes, 01090 Montmerle-sur-Saône</dd>
+					<dd>{ETABLISSEMENT.adresse.full}</dd>
 				</dl>
 			</section>
 

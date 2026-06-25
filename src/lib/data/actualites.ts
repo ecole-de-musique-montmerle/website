@@ -1,7 +1,11 @@
-import friendsPhoto from '$lib/assets/photos/friends.png';
-import guitarPhoto from '$lib/assets/photos/guitar.png';
-import percussionsPhoto from '$lib/assets/photos/percussions.png';
-import montmerlePhoto from '$lib/assets/photos/montmerle.png';
+import friendsPhoto from '$lib/assets/photos/friends.webp';
+import guitarPhoto from '$lib/assets/photos/guitar.webp';
+import percussionsPhoto from '$lib/assets/photos/percussions.webp';
+import montmerlePhoto from '$lib/assets/photos/montmerle.webp';
+import type { Image } from '$lib/types/image';
+import { ETABLISSEMENT } from '$lib/data/etablissement';
+
+export { formatDate } from '$lib/utils/date';
 
 export type ActualiteBlock =
 	| { type: 'paragraph'; text: string }
@@ -14,7 +18,7 @@ export type Actualite = {
 	excerpt: string;
 	date: string; // ISO YYYY-MM-DD
 	category: 'Audition' | 'Concert' | 'Vie associative' | 'Inscriptions';
-	cover: { src: string; width: number; height: number; alt: string };
+	cover: Image & { alt: string };
 	author: string;
 	body: ActualiteBlock[];
 	source?: { label: string; href: string };
@@ -34,7 +38,7 @@ export const actualites: Actualite[] = [
 			height: 1280,
 			alt: "Élèves de l'École de Musique 3 Rivières lors d'une audition"
 		},
-		author: 'École de Musique 3 Rivières',
+		author: ETABLISSEMENT.nom,
 		body: [
 			{
 				type: 'paragraph',
@@ -71,7 +75,7 @@ export const actualites: Actualite[] = [
 			height: 1280,
 			alt: "Jeune talent jouant de la guitare lors d'une scène ouverte"
 		},
-		author: 'École de Musique 3 Rivières',
+		author: ETABLISSEMENT.nom,
 		body: [
 			{
 				type: 'paragraph',
@@ -108,7 +112,7 @@ export const actualites: Actualite[] = [
 			height: 1280,
 			alt: "Atelier collectif de percussions de l'École de Musique 3 Rivières"
 		},
-		author: 'École de Musique 3 Rivières',
+		author: ETABLISSEMENT.nom,
 		body: [
 			{
 				type: 'paragraph',
@@ -141,7 +145,7 @@ export const actualites: Actualite[] = [
 			height: 1280,
 			alt: 'Montmerle-sur-Saône et la vie associative locale'
 		},
-		author: 'École de Musique 3 Rivières',
+		author: ETABLISSEMENT.nom,
 		body: [
 			{
 				type: 'paragraph',
@@ -172,25 +176,4 @@ export function getActualite(slug: string): Actualite | undefined {
 export function getRecentActualites(limit?: number): Actualite[] {
 	const sorted = [...actualites].sort((a, b) => b.date.localeCompare(a.date));
 	return typeof limit === 'number' ? sorted.slice(0, limit) : sorted;
-}
-
-const MONTHS = [
-	'janvier',
-	'février',
-	'mars',
-	'avril',
-	'mai',
-	'juin',
-	'juillet',
-	'août',
-	'septembre',
-	'octobre',
-	'novembre',
-	'décembre'
-];
-
-export function formatDate(iso: string): string {
-	const [year, month, day] = iso.split('-').map((n) => parseInt(n, 10));
-	if (!year || !month || !day) return iso;
-	return `${day} ${MONTHS[month - 1] ?? ''} ${year}`.trim();
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHero from '$lib/components/PageHero.svelte';
+	import { ETABLISSEMENT } from '$lib/data/etablissement';
 </script>
 
 <svelte:head>
@@ -29,40 +30,40 @@
 				</p>
 				<dl>
 					<dt>Nom</dt>
-					<dd>École de Musique 3 Rivières (AFDCM)</dd>
+					<dd>{ETABLISSEMENT.nomLegal}</dd>
 
 					<dt>Forme</dt>
-					<dd>Association déclarée loi 1901</dd>
+					<dd>{ETABLISSEMENT.forme}</dd>
 
 					<dt>Activité</dt>
-					<dd>Enseignement culturel (code APE 8552Z)</dd>
+					<dd>{ETABLISSEMENT.activite}</dd>
 
 					<dt>Création</dt>
-					<dd>24 septembre 1997</dd>
+					<dd>{ETABLISSEMENT.creation}</dd>
 
 					<dt>SIREN</dt>
-					<dd>414 444 018</dd>
+					<dd>{ETABLISSEMENT.siren}</dd>
 
 					<dt>SIRET</dt>
-					<dd>414 444 018 00025</dd>
+					<dd>{ETABLISSEMENT.siret}</dd>
 
 					<dt>Siège</dt>
-					<dd>29 rue des Minimes, 01090 Montmerle-sur-Saône</dd>
+					<dd>{ETABLISSEMENT.adresse.full}</dd>
 
 					<dt>Téléphone</dt>
 					<dd>
-						<a href="tel:+33673714699">06 73 71 46 99</a>
+						<a href="tel:{ETABLISSEMENT.telephone.intl}">{ETABLISSEMENT.telephone.raw}</a>
 					</dd>
 
 					<dt>Courriel</dt>
 					<dd>
-						<a href="mailto:ecolemusiquemontmerle3r@gmail.com">
-							ecolemusiquemontmerle3r@gmail.com
+						<a href="mailto:{ETABLISSEMENT.email}">
+							{ETABLISSEMENT.email}
 						</a>
 					</dd>
 
 					<dt>Direction de publication</dt>
-					<dd>Guillemette Bourmeyster, présidente</dd>
+					<dd>{ETABLISSEMENT.direction.full}</dd>
 				</dl>
 			</section>
 
@@ -127,8 +128,9 @@
 				<p>
 					Pour toute question relative à ces mentions légales ou au contenu du site, vous pouvez
 					écrire à
-					<a href="mailto:ecolemusiquemontmerle3r@gmail.com"> ecolemusiquemontmerle3r@gmail.com </a>
-					ou téléphoner au <a href="tel:+33673714699">06 73 71 46 99</a>.
+					<a href="mailto:{ETABLISSEMENT.email}"> {ETABLISSEMENT.email} </a>
+					ou téléphoner au
+					<a href="tel:{ETABLISSEMENT.telephone.intl}">{ETABLISSEMENT.telephone.raw}</a>.
 				</p>
 			</section>
 		</article>

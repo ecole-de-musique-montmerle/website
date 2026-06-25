@@ -7,7 +7,7 @@
 	const latest = getRecentActualites(3);
 </script>
 
-<section class="news-preview page-section--light" aria-labelledby="news-preview-title">
+<section class="news-preview section-surface" aria-labelledby="news-preview-title">
 	<div class="container">
 		<header class="news-preview__header">
 			<div class="news-preview__heading">
@@ -18,7 +18,7 @@
 			</p>
 		</header>
 
-		<ul class="news-preview__grid" role="list">
+		<ul class="news-preview__grid list-unstyled" role="list">
 			{#each latest as article (article.slug)}
 				<li>
 					<ActualiteCard {article} href={resolve(`/actualites/${article.slug}`)} />
@@ -34,8 +34,6 @@
 
 <style>
 	.news-preview {
-		background-color: var(--color-surface-secondary);
-		color: var(--color-text-primary);
 		padding-block: var(--section-padding-y);
 	}
 
@@ -53,15 +51,6 @@
 		gap: var(--space-3);
 	}
 
-	.news-preview__eyebrow {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
-		color: var(--color-text-secondary);
-	}
-
 	.news-preview__title {
 		font-size: var(--font-size-4xl);
 		letter-spacing: var(--tracking-tight);
@@ -77,9 +66,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
 		gap: clamp(var(--space-5), 2.5vw, var(--space-7));
-		list-style: none;
-		padding: 0;
-		margin: 0;
 	}
 
 	.news-preview__grid li {

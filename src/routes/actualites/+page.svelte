@@ -33,7 +33,7 @@
 		{/if}
 
 		{#if rest.length > 0}
-			<ul class="grid" role="list">
+			<ul class="grid list-unstyled" role="list">
 				{#each rest as article (article.slug)}
 					<li>
 						<ActualiteCard {article} href={resolve(`/actualites/${article.slug}`)} />
@@ -61,9 +61,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 		gap: clamp(var(--space-5), 2.5vw, var(--space-7));
-		list-style: none;
-		padding: 0;
-		margin: 0;
 	}
 
 	.grid li {

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import ActualiteCard from '$lib/components/ActualiteCard.svelte';
-	import Button from '$lib/components/Button.svelte';
-	import { formatDate } from '$lib/data/actualites';
+	import EndCta from '$lib/components/EndCta.svelte';
+	import { formatDate } from '$lib/utils/date';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -22,16 +22,18 @@
 <article class="article" aria-labelledby="article-title">
 	<header class="article__header">
 		<div class="container">
-			<p class="article__back">
+			<p class="article__back meta-label">
 				<a href={resolve('/actualites')}>&larr; Toutes les actualités</a>
 			</p>
 			<div class="article__meta">
 				<span class="article__category">{article.category}</span>
-				<time class="article__date" datetime={article.date}>{formatDate(article.date)}</time>
+				<time class="article__date meta-label" datetime={article.date}
+					>{formatDate(article.date)}</time
+				>
 			</div>
 			<h1 id="article-title" class="article__title">{article.title}</h1>
 			<p class="article__excerpt">{article.excerpt}</p>
-			<p class="article__author">Par {article.author}</p>
+			<p class="article__author meta-label">Par {article.author}</p>
 		</div>
 	</header>
 
@@ -82,7 +84,7 @@
 	>
 		<div class="container">
 			<h2 id="related-title" class="article__related-title">À lire aussi</h2>
-			<ul class="grid" role="list">
+			<ul class="grid list-unstyled" role="list">
 				{#each related as item (item.slug)}
 					<li>
 						<ActualiteCard article={item} href={resolve(`/actualites/${item.slug}`)} />
@@ -93,17 +95,11 @@
 	</section>
 {/if}
 
-<section class="page-section page-section--dark article__cta">
-	<div class="container article__cta-inner">
-		<div class="article__cta-copy">
-			<h2 class="article__cta-title">Envie de rejoindre l'école&nbsp;?</h2>
-			<p class="article__cta-lede">
-				Cours individuels, chorales, éveil musical et ensembles, à Montmerle-sur-Saône.
-			</p>
-		</div>
-		<Button href={resolve('/inscription')}>S'inscrire</Button>
-	</div>
-</section>
+<EndCta
+	title="Envie de rejoindre l'école&nbsp;?"
+	lede="Cours individuels, chorales, éveil musical et ensembles, à Montmerle-sur-Saône."
+	cta={{ href: resolve('/inscription'), label: "S'inscrire" }}
+/>
 
 <style>
 	.article__header {
@@ -113,11 +109,6 @@
 	}
 
 	.article__back {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
 		margin-bottom: var(--space-7);
 	}
 
@@ -150,11 +141,6 @@
 	}
 
 	.article__date {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
 		color: var(--color-text-on-dark-muted);
 	}
 
@@ -175,11 +161,6 @@
 	}
 
 	.article__author {
-		font-family: var(--font-body);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-medium);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
 		color: var(--color-text-on-dark-muted);
 	}
 
@@ -227,44 +208,10 @@
 		margin-bottom: clamp(var(--space-6), 4vw, var(--space-8));
 	}
 
-	.article__cta {
-		padding-block: var(--section-padding-y);
-	}
-
-	.article__cta-inner {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: clamp(var(--space-6), 4vw, var(--space-10));
-		flex-wrap: wrap;
-	}
-
-	.article__cta-copy {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-3);
-	}
-
-	.article__cta-title {
-		font-size: var(--font-size-4xl);
-		line-height: var(--line-height-heading);
-		letter-spacing: var(--tracking-tight);
-	}
-
-	.article__cta-lede {
-		font-size: var(--font-size-base);
-		line-height: var(--line-height-body);
-		color: var(--color-text-on-dark-muted);
-		max-width: 56ch;
-	}
-
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 		gap: clamp(var(--space-5), 2.5vw, var(--space-7));
-		list-style: none;
-		padding: 0;
-		margin: 0;
 	}
 
 	.grid li {

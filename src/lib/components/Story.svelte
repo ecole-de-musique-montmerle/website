@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import montmerlePhoto from '$lib/assets/photos/montmerle.png';
+	import montmerlePhoto from '$lib/assets/photos/montmerle.webp';
 	import Button from './Button.svelte';
 </script>
 
-<section class="story" aria-labelledby="story-title">
+<section class="story section-surface" aria-labelledby="story-title">
 	<div class="container">
 		<h2 id="story-title" class="story__title">Une école associative depuis 1997</h2>
 
@@ -46,13 +46,7 @@
 
 <style>
 	.story {
-		background-color: var(--color-surface-secondary);
-		color: var(--color-text-primary);
 		padding-block: var(--section-padding-y);
-		--color-action: var(--color-blue);
-		--color-action-text: var(--color-ivoire);
-		--color-action-hover: var(--color-blue-deep);
-		--color-action-focus: var(--color-blue);
 	}
 
 	.story__title {

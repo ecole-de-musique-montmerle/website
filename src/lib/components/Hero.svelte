@@ -1,5 +1,5 @@
 <script lang="ts">
-	import heroPhoto from '$lib/assets/photos/photo_1.png';
+	import heroPhoto from '$lib/assets/photos/photo_1.webp';
 </script>
 
 <section class="hero" aria-labelledby="hero-title">

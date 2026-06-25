@@ -1,16 +1,7 @@
 <script lang="ts">
 	import PageHero from '$lib/components/PageHero.svelte';
-
-	const lieux = [
-		{
-			title: 'Place de la mairie',
-			body: 'Salles vertes, à proximité immédiate du centre de Montmerle-sur-Saône.'
-		},
-		{
-			title: 'Salle des chaisiers',
-			body: 'Salle dédiée aux ensembles et aux ateliers collectifs.'
-		}
-	];
+	import { lieux } from '$lib/data/contact';
+	import { ETABLISSEMENT } from '$lib/data/etablissement';
 </script>
 
 <svelte:head>
@@ -27,59 +18,62 @@
 />
 
 <section class="page-section page-section--light" aria-labelledby="coordonnees">
-	<div class="container block">
-		<header class="block__header">
-			<h2 id="coordonnees" class="block__title">Coordonnées</h2>
+	<div class="container block-stack">
+		<header class="block-header">
+			<h2 id="coordonnees" class="block-title">Coordonnées</h2>
 		</header>
 
 		<dl class="contact-list">
 			<div class="contact-item">
 				<dt>Adresse administrative</dt>
 				<dd>
-					29 rue des Minimes<br />
-					01090 Montmerle-sur-Saône
+					{ETABLISSEMENT.adresse.rue}<br />
+					{ETABLISSEMENT.adresse.codePostal}
+					{ETABLISSEMENT.adresse.ville}
 				</dd>
 			</div>
 
 			<div class="contact-item">
 				<dt>Téléphone</dt>
 				<dd>
-					<a class="contact-link" href="tel:+33673714699">06 73 71 46 99</a>
-					<span class="contact-meta"> Guillemette Bourmeyster, présidente </span>
+					<a class="contact-link" href="tel:{ETABLISSEMENT.telephone.intl}">
+						{ETABLISSEMENT.telephone.raw}
+					</a>
+					<span class="contact-meta"> {ETABLISSEMENT.direction.full} </span>
 				</dd>
 			</div>
 
 			<div class="contact-item">
 				<dt>Courriel</dt>
 				<dd>
-					<a class="contact-link" href="mailto:ecolemusiquemontmerle3r@gmail.com">
-						ecolemusiquemontmerle3r@gmail.com
+					<a class="contact-link" href="mailto:{ETABLISSEMENT.email}">
+						{ETABLISSEMENT.email}
 					</a>
 				</dd>
 			</div>
 
 			<div class="contact-item">
 				<dt>Horaires</dt>
-				<dd>Du lundi au samedi, sur rendez-vous.</dd>
+				<dd>{ETABLISSEMENT.horaires}</dd>
 			</div>
 		</dl>
 	</div>
 </section>
 
 <section class="page-section page-section--light" aria-labelledby="lieux">
-	<div class="container block">
-		<header class="block__header">
-			<h2 id="lieux" class="block__title">Lieux des cours</h2>
-			<p class="block__lede">
+	<div class="container block-stack">
+		<header class="block-header">
+			<h2 id="lieux" class="block-title">Lieux des cours</h2>
+			<p class="block-lede">
 				Les cours se déroulent à Montmerle-sur-Saône, dans deux lieux dédiés au cœur du village.
 			</p>
 		</header>
 
-		<ul class="cards" role="list">
+		<ul class="cards list-unstyled" role="list">
 			{#each lieux as lieu (lieu.title)}
-				<li class="card">
-					<h3 class="card__title">{lieu.title}</h3>
-					<p class="card__body">{lieu.body}</p>
+				<li class="card-base">
+					<h3 class="card-base__title">{lieu.title}</h3>
+					<p class="card-base__body">{lieu.body}</p>
 				</li>
 			{/each}
 		</ul>
@@ -87,30 +81,6 @@
 </section>
 
 <style>
-	.block {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(var(--space-6), 4vw, var(--space-9));
-	}
-
-	.block__header {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-4);
-		max-width: 56ch;
-	}
-
-	.block__title {
-		font-size: var(--font-size-4xl);
-		letter-spacing: var(--tracking-tight);
-	}
-
-	.block__lede {
-		font-size: var(--font-size-md);
-		line-height: var(--line-height-body);
-		color: var(--color-text-secondary);
-	}
-
 	.contact-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
@@ -165,27 +135,5 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
 		gap: clamp(var(--space-4), 2vw, var(--space-6));
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.card {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-3);
-		padding: clamp(var(--space-5), 2vw, var(--space-6));
-		background-color: var(--color-paper);
-		border-radius: var(--radius-md);
-	}
-
-	.card__title {
-		font-size: var(--font-size-xl);
-		letter-spacing: var(--tracking-tight);
-	}
-
-	.card__body {
-		font-size: var(--font-size-sm);
-		line-height: var(--line-height-body);
 	}
 </style>
