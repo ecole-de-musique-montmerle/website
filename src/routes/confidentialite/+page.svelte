@@ -12,7 +12,6 @@
 </svelte:head>
 
 <PageHero
-	eyebrow="Données personnelles"
 	title="Politique de confidentialité"
 	lede="Quelles données ce site traite, dans quel but, sous quel cadre légal, et comment exercer vos droits."
 />

@@ -22,7 +22,6 @@
 </svelte:head>
 
 <PageHero
-	eyebrow="Nous contacter"
 	title="Parlons de votre projet musical"
 	lede="Sur rendez-vous, du lundi au samedi, à Montmerle-sur-Saône. Une équipe associative à l'écoute des familles, des ados et des adultes."
 />

@@ -12,7 +12,6 @@
 </svelte:head>
 
 <PageHero
-	eyebrow="Informations légales"
 	title="Mentions légales"
 	lede="Identification de l'éditeur, hébergement et propriété intellectuelle, conformément à l'article 6 III de la loi pour la confiance dans l'économie numérique du 21 juin 2004."
 />

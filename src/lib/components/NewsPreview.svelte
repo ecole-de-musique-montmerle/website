@@ -1,0 +1,98 @@
+<script lang="ts">
+	import { resolve } from '$app/paths';
+	import ActualiteCard from './ActualiteCard.svelte';
+	import Button from './Button.svelte';
+	import { getRecentActualites } from '$lib/data/actualites';
+
+	const latest = getRecentActualites(3);
+</script>
+
+<section class="news-preview page-section--light" aria-labelledby="news-preview-title">
+	<div class="container">
+		<header class="news-preview__header">
+			<div class="news-preview__heading">
+				<h2 id="news-preview-title" class="news-preview__title">La vie de l'école</h2>
+			</div>
+			<p class="news-preview__lede">
+				Auditions, concerts, scène ouverte et moments associatifs à Montmerle-sur-Saône.
+			</p>
+		</header>
+
+		<ul class="news-preview__grid" role="list">
+			{#each latest as article (article.slug)}
+				<li>
+					<ActualiteCard {article} href={resolve(`/actualites/${article.slug}`)} />
+				</li>
+			{/each}
+		</ul>
+
+		<div class="news-preview__cta">
+			<Button href={resolve('/actualites')} variant="ghost">Toutes les actualités</Button>
+		</div>
+	</div>
+</section>
+
+<style>
+	.news-preview {
+		background-color: var(--color-surface-secondary);
+		color: var(--color-text-primary);
+		padding-block: var(--section-padding-y);
+	}
+
+	.news-preview__header {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		max-width: 56ch;
+		margin-bottom: clamp(var(--space-7), 4vw, var(--space-9));
+	}
+
+	.news-preview__heading {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.news-preview__eyebrow {
+		font-family: var(--font-body);
+		font-size: var(--font-size-xs);
+		font-weight: var(--font-weight-medium);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		color: var(--color-text-secondary);
+	}
+
+	.news-preview__title {
+		font-size: var(--font-size-4xl);
+		letter-spacing: var(--tracking-tight);
+	}
+
+	.news-preview__lede {
+		font-size: var(--font-size-md);
+		line-height: var(--line-height-body);
+		color: var(--color-text-secondary);
+	}
+
+	.news-preview__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+		gap: clamp(var(--space-5), 2.5vw, var(--space-7));
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.news-preview__grid li {
+		display: flex;
+	}
+
+	.news-preview__grid :global(.card) {
+		width: 100%;
+	}
+
+	.news-preview__cta {
+		display: flex;
+		justify-content: center;
+		margin-top: clamp(var(--space-7), 4vw, var(--space-9));
+	}
+</style>

@@ -112,7 +112,6 @@
 </svelte:head>
 
 <PageHero
-	eyebrow="Équipe pédagogique"
 	title="Sept professeurs, une école"
 	lede="Une équipe stable et expérimentée, formée autour des cours individuels, du chant et des ensembles. Chaque enseignant suit ses élèves dans la durée."
 />

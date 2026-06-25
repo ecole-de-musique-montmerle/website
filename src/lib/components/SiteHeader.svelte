@@ -7,7 +7,8 @@
 	const navItems = [
 		{ href: resolve('/cours'), label: 'Cours' },
 		{ href: resolve('/professeurs'), label: 'Professeurs' },
-		{ href: resolve('/inscription'), label: 'Inscription' }
+		{ href: resolve('/inscription'), label: 'Inscription' },
+		{ href: resolve('/actualites'), label: 'Actualités' }
 	];
 
 	const pathname = $derived(page.url.pathname);

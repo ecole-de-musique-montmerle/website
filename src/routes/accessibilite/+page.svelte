@@ -12,7 +12,6 @@
 </svelte:head>
 
 <PageHero
-	eyebrow="Accessibilité"
 	title="Déclaration d'accessibilité"
 	lede="Engagement de l'école pour rendre son site accessible à toutes et tous, état de conformité, et voies de retour."
 />

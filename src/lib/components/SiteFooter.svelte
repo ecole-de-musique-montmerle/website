@@ -6,6 +6,7 @@
 		{ href: resolve('/cours'), label: 'Cours' },
 		{ href: resolve('/professeurs'), label: 'Professeurs' },
 		{ href: resolve('/inscription'), label: 'Inscription' },
+		{ href: resolve('/actualites'), label: 'Actualités' },
 		{ href: resolve('/contact'), label: 'Contact' }
 	];
 

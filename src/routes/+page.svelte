@@ -4,6 +4,7 @@
 	import Ensembles from '$lib/components/Ensembles.svelte';
 	import Gallery from '$lib/components/Gallery.svelte';
 	import Hero from '$lib/components/Hero.svelte';
+	import NewsPreview from '$lib/components/NewsPreview.svelte';
 	import Story from '$lib/components/Story.svelte';
 </script>
 
@@ -21,3 +22,4 @@
 <Story />
 <Gallery />
 <Ensembles />
+<NewsPreview />

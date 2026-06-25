@@ -40,7 +40,6 @@
 </svelte:head>
 
 <PageHero
-	eyebrow="Inscription"
 	title="S'inscrire à l'école"
 	lede="Une école associative, des tarifs accessibles, des modalités souples. Nous accompagnons chaque famille dans son inscription."
 />

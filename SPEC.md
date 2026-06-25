@@ -265,13 +265,3 @@ Pages SEO prioritaires :
 Attention réseaux sociaux :
 - Facebook
 - Instagram
-
-## 12. Critères d’acceptation
-
-Le site sera considéré conforme si :
-- L’utilisateur comprend l’offre en moins de 10 secondes.
-- Le contact est visible dès l’accueil.
-- Les cours, professeurs, inscription et lieu sont accessibles en un clic depuis la navigation.
-- Aucune information non sourcée n’est inventée.
-- Le site est utilisable au clavier et sur mobile.
-- Le contenu distingue clairement l’école de Montmerle de l’EM3R de Saint-Jean-le-Vieux.
