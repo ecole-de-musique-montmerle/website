@@ -40,7 +40,8 @@
 </script>
 
 <svelte:head>
-	<title>{article ? `${article.title} | École de Musique 3 Rivières` : 'Article introuvable'}</title>
+	<title>{article ? `${article.title} | École de Musique 3 Rivières` : 'Article introuvable'}</title
+	>
 	<meta name="description" content={article?.excerpt ?? 'Article introuvable.'} />
 	{#if article}
 		<meta property="og:type" content="article" />

@@ -21,7 +21,7 @@ export const FOOTER_NAV: NavItem[] = [
 	{ href: '/inscription', label: 'Inscription' },
 	{ href: '/actualites', label: 'Actualités' },
 	{ href: '/contact', label: 'Contact' },
-	{ href: '/reglement-interieur', label: "Règlement intérieur" }
+	{ href: '/reglement-interieur', label: 'Règlement intérieur' }
 ];
 
 /** Liens légaux affichés dans le footer. */

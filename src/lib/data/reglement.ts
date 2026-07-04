@@ -62,8 +62,7 @@ export const articlesReglement: Article[] = [
 	{
 		numero: 10,
 		titre: 'Respect des locaux et du matériel',
-		contenu:
-			'Il est interdit de dégrader les locaux et le matériel mis à disposition.'
+		contenu: 'Il est interdit de dégrader les locaux et le matériel mis à disposition.'
 	},
 	{
 		numero: 11,
@@ -74,8 +73,7 @@ export const articlesReglement: Article[] = [
 	{
 		numero: 12,
 		titre: 'Responsabilité pendant les cours',
-		contenu:
-			"Les élèves sont sous la responsabilité de l'Association uniquement pendant les cours."
+		contenu: "Les élèves sont sous la responsabilité de l'Association uniquement pendant les cours."
 	},
 	{
 		numero: 13,
@@ -86,8 +84,7 @@ export const articlesReglement: Article[] = [
 	{
 		numero: 14,
 		titre: 'Présence des parents aux cours',
-		contenu:
-			"Pour des raisons pédagogiques, les parents ne sont pas admis à assister aux cours."
+		contenu: 'Pour des raisons pédagogiques, les parents ne sont pas admis à assister aux cours.'
 	},
 	{
 		numero: 15,

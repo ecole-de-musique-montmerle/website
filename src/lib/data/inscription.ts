@@ -29,7 +29,7 @@ export const reductions: Reduction[] = [
 	},
 	{
 		title: '5 % à partir du 3e élève',
-		body: "Réduction sur le montant total à partir du troisième élève inscrit dans la famille."
+		body: 'Réduction sur le montant total à partir du troisième élève inscrit dans la famille.'
 	}
 ];
 

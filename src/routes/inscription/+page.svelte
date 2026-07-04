@@ -30,7 +30,8 @@
 		<header class="block-header">
 			<h2 id="tarifs" class="block-title">Tarifs 2026-2027</h2>
 			<p class="block-lede">
-				Deux tarifs sont appliqués : <strong>tarif 1</strong> pour les habitants de Montmerle-sur-Saône,
+				Deux tarifs sont appliqués : <strong>tarif 1</strong> pour les habitants de
+				Montmerle-sur-Saône,
 				<strong>tarif 2</strong> pour les non-résidents.
 			</p>
 		</header>
@@ -150,7 +151,8 @@
 		<header class="block-header">
 			<h2 id="reductions" class="block-title">Réductions et aides</h2>
 			<p class="block-lede">
-				L'école applique des réductions familiales et utilise les aides locales pour les familles montmerloises.
+				L'école applique des réductions familiales et utilise les aides locales pour les familles
+				montmerloises.
 			</p>
 		</header>
 

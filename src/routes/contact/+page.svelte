@@ -39,7 +39,9 @@
 					{#each ETABLISSEMENT.telephones as phone, index (phone.intl)}
 						<a class="contact-link" href="tel:{phone.intl}">
 							{phone.raw}
-						</a>{#if index < ETABLISSEMENT.telephones.length - 1}<span class="contact-meta"> / </span>{/if}
+						</a>{#if index < ETABLISSEMENT.telephones.length - 1}<span class="contact-meta">
+								/
+							</span>{/if}
 					{/each}
 					<span class="contact-meta"> {ETABLISSEMENT.direction.full} </span>
 				</dd>

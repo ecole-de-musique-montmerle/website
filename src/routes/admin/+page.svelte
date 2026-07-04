@@ -183,7 +183,9 @@
 		draft.body = [...draft.body, { type, text: '' }];
 	}
 	function updateBlock(index: number, patch: Partial<ActualiteBlock>) {
-		draft.body = draft.body.map((b, i) => (i === index ? ({ ...b, ...patch } as ActualiteBlock) : b));
+		draft.body = draft.body.map((b, i) =>
+			i === index ? ({ ...b, ...patch } as ActualiteBlock) : b
+		);
 	}
 	function removeBlock(index: number) {
 		draft.body = draft.body.filter((_, i) => i !== index);
@@ -346,12 +348,7 @@
 				</div>
 				{#if draft.coverSrc}
 					<p class="admin__preview-label meta-label">Aperçu</p>
-					<img
-						class="admin__preview"
-						src={draft.coverSrc}
-						alt={draft.coverAlt}
-						loading="lazy"
-					/>
+					<img class="admin__preview" src={draft.coverSrc} alt={draft.coverAlt} loading="lazy" />
 				{/if}
 			</fieldset>
 
@@ -369,11 +366,7 @@
 								>
 									{#each BLOCK_TYPES as t (t)}
 										<option value={t}>
-											{t === 'paragraph'
-												? 'Paragraphe'
-												: t === 'heading'
-													? 'Titre'
-													: 'Citation'}
+											{t === 'paragraph' ? 'Paragraphe' : t === 'heading' ? 'Titre' : 'Citation'}
 										</option>
 									{/each}
 								</select>
@@ -383,21 +376,21 @@
 										type="button"
 										aria-label="Monter"
 										onclick={() => moveBlock(i, -1)}
-										disabled={i === 0}
-									>↑</button>
+										disabled={i === 0}>↑</button
+									>
 									<button
 										class="btn btn--ghost btn--sm"
 										type="button"
 										aria-label="Descendre"
 										onclick={() => moveBlock(i, 1)}
-										disabled={i === draft.body.length - 1}
-									>↓</button>
+										disabled={i === draft.body.length - 1}>↓</button
+									>
 									<button
 										class="btn btn--ghost btn--sm"
 										type="button"
 										aria-label="Supprimer le bloc"
-										onclick={() => removeBlock(i)}
-									>Retirer</button>
+										onclick={() => removeBlock(i)}>Retirer</button
+									>
 								</div>
 							</div>
 							<textarea
@@ -405,8 +398,7 @@
 								rows={block.type === 'heading' ? 1 : 3}
 								placeholder={block.type === 'heading' ? 'Titre de section' : 'Texte'}
 								value={block.text}
-								oninput={(e) => updateBlock(i, { text: e.currentTarget.value })}
-							></textarea>
+								oninput={(e) => updateBlock(i, { text: e.currentTarget.value })}></textarea>
 							{#if block.type === 'quote'}
 								<input
 									class="field__input"
@@ -420,7 +412,11 @@
 					{/each}
 				</ol>
 				<div class="blocks__add">
-					<button class="btn btn--ghost btn--sm" type="button" onclick={() => addBlock('paragraph')}>
+					<button
+						class="btn btn--ghost btn--sm"
+						type="button"
+						onclick={() => addBlock('paragraph')}
+					>
 						+ Paragraphe
 					</button>
 					<button class="btn btn--ghost btn--sm" type="button" onclick={() => addBlock('heading')}>
@@ -492,15 +488,14 @@
 									<button class="btn btn--primary btn--sm" onclick={() => removeArticle(a.slug)}>
 										Confirmer
 									</button>
-									<button
-										class="btn btn--ghost btn--sm"
-										onclick={() => (confirmDeleteSlug = null)}
-									>Annuler</button>
+									<button class="btn btn--ghost btn--sm" onclick={() => (confirmDeleteSlug = null)}
+										>Annuler</button
+									>
 								{:else}
 									<button
 										class="btn btn--ghost btn--sm"
-										onclick={() => (confirmDeleteSlug = a.slug)}
-									>Supprimer</button>
+										onclick={() => (confirmDeleteSlug = a.slug)}>Supprimer</button
+									>
 								{/if}
 							</div>
 						</li>

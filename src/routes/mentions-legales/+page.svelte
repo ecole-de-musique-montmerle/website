@@ -53,9 +53,11 @@
 					<dt>Téléphone</dt>
 					<dd>
 						{#each ETABLISSEMENT.telephones as phone, index (phone.intl)}
-								<a href="tel:{phone.intl}">{phone.raw}</a>
-								{#if index < ETABLISSEMENT.telephones.length - 1} / {/if}
-							{/each}
+							<a href="tel:{phone.intl}">{phone.raw}</a>
+							{#if index < ETABLISSEMENT.telephones.length - 1}
+								/
+							{/if}
+						{/each}
 					</dd>
 
 					<dt>Courriel</dt>
@@ -134,9 +136,11 @@
 					<a href="mailto:{ETABLISSEMENT.email}"> {ETABLISSEMENT.email} </a>
 					ou téléphoner au
 					{#each ETABLISSEMENT.telephones as phone, index (phone.intl)}
-								<a href="tel:{phone.intl}">{phone.raw}</a>
-								{#if index < ETABLISSEMENT.telephones.length - 1} / {/if}
-							{/each}.
+						<a href="tel:{phone.intl}">{phone.raw}</a>
+						{#if index < ETABLISSEMENT.telephones.length - 1}
+							/
+						{/if}
+					{/each}.
 				</p>
 			</section>
 		</article>

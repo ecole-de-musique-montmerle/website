@@ -87,9 +87,11 @@
 					<dt>Téléphone</dt>
 					<dd>
 						{#each ETABLISSEMENT.telephones as phone, index (phone.intl)}
-								<a href="tel:{phone.intl}">{phone.raw}</a>
-								{#if index < ETABLISSEMENT.telephones.length - 1} / {/if}
-							{/each}
+							<a href="tel:{phone.intl}">{phone.raw}</a>
+							{#if index < ETABLISSEMENT.telephones.length - 1}
+								/
+							{/if}
+						{/each}
 					</dd>
 
 					<dt>Adresse</dt>
