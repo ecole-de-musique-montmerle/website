@@ -60,9 +60,13 @@
 				{ETABLISSEMENT.email}
 			</a>
 
-			<a class="site-footer__contact" href="tel:{ETABLISSEMENT.telephone.intl}">
-				{ETABLISSEMENT.telephone.raw}
-			</a>
+			<div class="site-footer__phones">
+				{#each ETABLISSEMENT.telephones as phone (phone.intl)}
+					<a class="site-footer__contact" href="tel:{phone.intl}">
+						{phone.raw}
+					</a>
+				{/each}
+			</div>
 		</div>
 
 		<div class="site-footer__rule" role="presentation"></div>
@@ -179,6 +183,14 @@
 
 	.site-footer__contact:last-of-type {
 		justify-self: end;
+	}
+
+	.site-footer__phones {
+		justify-self: end;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: var(--space-1);
 	}
 
 	.site-footer__legal {

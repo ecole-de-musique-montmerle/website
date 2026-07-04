@@ -36,9 +36,11 @@
 			<div class="contact-item">
 				<dt>Téléphone</dt>
 				<dd>
-					<a class="contact-link" href="tel:{ETABLISSEMENT.telephone.intl}">
-						{ETABLISSEMENT.telephone.raw}
-					</a>
+					{#each ETABLISSEMENT.telephones as phone, index (phone.intl)}
+						<a class="contact-link" href="tel:{phone.intl}">
+							{phone.raw}
+						</a>{#if index < ETABLISSEMENT.telephones.length - 1}<span class="contact-meta"> / </span>{/if}
+					{/each}
 					<span class="contact-meta"> {ETABLISSEMENT.direction.full} </span>
 				</dd>
 			</div>
