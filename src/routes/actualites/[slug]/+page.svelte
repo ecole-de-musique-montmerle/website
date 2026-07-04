@@ -1,105 +1,151 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import ActualiteCard from '$lib/components/ActualiteCard.svelte';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import { formatDate } from '$lib/utils/date';
+	import { fetchArticleBySlug } from '$lib/services/articles';
+	import type { Actualite } from '$lib/data/actualites';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
 
-	const article = $derived(data.article);
-	const related = $derived(data.related);
+	// Article résolu : d'abord la version statique prérendue, puis la version
+	// live Firestore si elle existe (permet de prendre en compte les
+	// modifications faites depuis /admin sans rebuild).
+	let article = $state<Actualite | null>(data.article);
+	let related = $state(data.related);
+	let notFound = $state(false);
+	let loading = $state(!data.article);
+
+	onMount(async () => {
+		try {
+			const live = await fetchArticleBySlug(data.slug);
+			if (live) {
+				article = live;
+				loading = false;
+			} else if (!data.article) {
+				notFound = true;
+				loading = false;
+			} else {
+				loading = false;
+			}
+		} catch {
+			if (!data.article) {
+				notFound = true;
+			}
+			loading = false;
+		}
+	});
 </script>
 
 <svelte:head>
-	<title>{article.title} | École de Musique 3 Rivières</title>
-	<meta name="description" content={article.excerpt} />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content={article.title} />
-	<meta property="og:description" content={article.excerpt} />
+	<title>{article ? `${article.title} | École de Musique 3 Rivières` : 'Article introuvable'}</title>
+	<meta name="description" content={article?.excerpt ?? 'Article introuvable.'} />
+	{#if article}
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content={article.title} />
+		<meta property="og:description" content={article.excerpt} />
+	{/if}
 </svelte:head>
 
-<article class="article" aria-labelledby="article-title">
-	<header class="article__header">
+{#if loading}
+	<section class="page-section page-section--light">
 		<div class="container">
-			<p class="article__back meta-label">
-				<a href={resolve('/actualites')}>&larr; Toutes les actualités</a>
-			</p>
-			<div class="article__meta">
-				<span class="article__category">{article.category}</span>
-				<time class="article__date meta-label" datetime={article.date}
-					>{formatDate(article.date)}</time
-				>
-			</div>
-			<h1 id="article-title" class="article__title">{article.title}</h1>
-			<p class="article__excerpt">{article.excerpt}</p>
-			<p class="article__author meta-label">Par {article.author}</p>
-		</div>
-	</header>
-
-	<figure class="article__cover">
-		<img
-			src={article.cover.src}
-			alt={article.cover.alt}
-			width={article.cover.width}
-			height={article.cover.height}
-			loading="eager"
-			decoding="async"
-		/>
-	</figure>
-
-	<div class="page-section page-section--light">
-		<div class="container article__content">
-			<div class="prose">
-				{#each article.body as block, i (i)}
-					{#if block.type === 'heading'}
-						<h2>{block.text}</h2>
-					{:else if block.type === 'quote'}
-						<blockquote>
-							<p>{block.text}</p>
-							{#if block.cite}<cite>— {block.cite}</cite>{/if}
-						</blockquote>
-					{:else}
-						<p>{block.text}</p>
-					{/if}
-				{/each}
-
-				{#if article.source}
-					<p class="article__source">
-						Source&nbsp;:
-						<a href={article.source.href} target="_blank" rel="noopener noreferrer external"
-							>{article.source.label}</a
-						>
-					</p>
-				{/if}
-			</div>
-		</div>
-	</div>
-</article>
-
-{#if related.length > 0}
-	<section
-		class="page-section page-section--light article__related"
-		aria-labelledby="related-title"
-	>
-		<div class="container">
-			<h2 id="related-title" class="article__related-title">À lire aussi</h2>
-			<ul class="grid list-unstyled" role="list">
-				{#each related as item (item.slug)}
-					<li>
-						<ActualiteCard article={item} href={resolve(`/actualites/${item.slug}`)} />
-					</li>
-				{/each}
-			</ul>
+			<p class="meta-label">Chargement de l’article…</p>
 		</div>
 	</section>
-{/if}
+{:else if notFound || !article}
+	<section class="page-section page-section--light">
+		<div class="container prose">
+			<h1>Article introuvable</h1>
+			<p>L’actualité demandée n’existe pas ou a été supprimée.</p>
+			<p><a href={resolve('/actualites')}>← Retour aux actualités</a></p>
+		</div>
+	</section>
+{:else}
+	<article class="article" aria-labelledby="article-title">
+		<header class="article__header">
+			<div class="container">
+				<p class="article__back meta-label">
+					<a href={resolve('/actualites')}>&larr; Toutes les actualités</a>
+				</p>
+				<div class="article__meta">
+					<span class="article__category">{article.category}</span>
+					<time class="article__date meta-label" datetime={article.date}
+						>{formatDate(article.date)}</time
+					>
+				</div>
+				<h1 id="article-title" class="article__title">{article.title}</h1>
+				<p class="article__excerpt">{article.excerpt}</p>
+				<p class="article__author meta-label">Par {article.author}</p>
+			</div>
+		</header>
 
-<EndCta
-	title="Envie de rejoindre l'école&nbsp;?"
-	lede="Cours individuels, chorales, éveil musical et ensembles, à Montmerle-sur-Saône."
-	cta={{ href: resolve('/inscription'), label: "S'inscrire" }}
-/>
+		<figure class="article__cover">
+			<img
+				src={article.cover.src}
+				alt={article.cover.alt}
+				width={article.cover.width}
+				height={article.cover.height}
+				loading="eager"
+				decoding="async"
+			/>
+		</figure>
+
+		<div class="page-section page-section--light">
+			<div class="container article__content">
+				<div class="prose">
+					{#each article.body as block, i (i)}
+						{#if block.type === 'heading'}
+							<h2>{block.text}</h2>
+						{:else if block.type === 'quote'}
+							<blockquote>
+								<p>{block.text}</p>
+								{#if block.cite}<cite>— {block.cite}</cite>{/if}
+							</blockquote>
+						{:else}
+							<p>{block.text}</p>
+						{/if}
+					{/each}
+
+					{#if article.source}
+						<p class="article__source">
+							Source&nbsp;:
+							<a href={article.source.href} target="_blank" rel="noopener noreferrer external"
+								>{article.source.label}</a
+							>
+						</p>
+					{/if}
+				</div>
+			</div>
+		</div>
+	</article>
+
+	{#if related.length > 0}
+		<section
+			class="page-section page-section--light article__related"
+			aria-labelledby="related-title"
+		>
+			<div class="container">
+				<h2 id="related-title" class="article__related-title">À lire aussi</h2>
+				<ul class="grid list-unstyled" role="list">
+					{#each related as item (item.slug)}
+						<li>
+							<ActualiteCard article={item} href={resolve(`/actualites/${item.slug}`)} />
+						</li>
+					{/each}
+				</ul>
+			</div>
+		</section>
+	{/if}
+
+	<EndCta
+		title="Envie de rejoindre l'école&nbsp;?"
+		lede="Cours individuels, chorales, éveil musical et ensembles, à Montmerle-sur-Saône."
+		cta={{ href: resolve('/inscription'), label: "S'inscrire" }}
+	/>
+{/if}
 
 <style>
 	.article__header {

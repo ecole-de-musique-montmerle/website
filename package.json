@@ -34,5 +34,8 @@
 	},
 	"overrides": {
 		"cookie": "^0.7.2"
+	},
+	"dependencies": {
+		"firebase": "^12.15.0"
 	}
 }

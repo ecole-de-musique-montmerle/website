@@ -1,12 +1,29 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import ActualiteCard from '$lib/components/ActualiteCard.svelte';
 	import EndCta from '$lib/components/EndCta.svelte';
 	import PageHero from '$lib/components/PageHero.svelte';
-	import { getRecentActualites } from '$lib/data/actualites';
+	import { getRecentActualites, type Actualite } from '$lib/data/actualites';
+	import { fetchArticles } from '$lib/services/articles';
 
-	const articles = getRecentActualites();
-	const [featured, ...rest] = articles;
+	// Données statiques prérendues (pour le SEO et un premier rendu instantané).
+	let articles: Actualite[] = getRecentActualites();
+	let firestoreError = $state(false);
+
+	onMount(async () => {
+		try {
+			const live = await fetchArticles();
+			if (live.length > 0) {
+				articles = [...live].sort((a, b) => b.date.localeCompare(a.date));
+			}
+		} catch {
+			// Hors ligne ou Firestore inaccessible : on conserve les données statiques.
+			firestoreError = true;
+		}
+	});
+
+	const [featured, ...rest] = $derived(articles);
 </script>
 
 <svelte:head>

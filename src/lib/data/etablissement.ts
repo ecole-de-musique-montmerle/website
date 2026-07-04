@@ -7,16 +7,16 @@ export const ETABLISSEMENT = {
 	siren: '414 444 018',
 	siret: '414 444 018 00025',
 	adresse: {
-		rue: '29 rue des Minimes',
-		codePostal: '01090',
+		rue: '29 rue des mûriers',
+		codePostal: '01990',
 		ville: 'Montmerle-sur-Saône',
-		full: '29 rue des Minimes, 01090 Montmerle-sur-Saône'
+		full: '29 rue des mûriers, 01990 Montmerle-sur-Saône'
 	},
-	email: 'ecolemusiquemontmerle3r@gmail.com',
-	telephone: {
-		raw: '06 73 71 46 99',
-		intl: '+33673714699'
-	},
+	email: 'accueil@em-montmerle.com',
+	telephones: [
+		{ raw: '06 73 71 46 99', intl: '+33673714699' },
+		{ raw: '07 88 12 33 94', intl: '+33788123394' }
+	],
 	direction: {
 		nom: 'Guillemette Bourmeyster',
 		role: 'présidente',

@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit';
 import { getActualite, getRecentActualites } from '$lib/data/actualites';
 import type { EntryGenerator } from './$types';
 
@@ -10,13 +9,12 @@ export const entries: EntryGenerator = () => {
 
 export function load({ params }: { params: { slug: string } }) {
 	const article = getActualite(params.slug);
-	if (!article) {
-		throw error(404, 'Article introuvable');
-	}
-
+	// On ne lève pas de 404 ici : un article créé uniquement via l'admin
+	// (Firestore) ne serait pas prérendu et serait servi via le fallback SPA.
+	// La page tente alors une résolution côté client.
 	const related = getRecentActualites()
-		.filter((a) => a.slug !== article.slug)
+		.filter((a) => a.slug !== params.slug)
 		.slice(0, 2);
 
-	return { article, related };
+	return { article: article ?? null, related, slug: params.slug };
 }
