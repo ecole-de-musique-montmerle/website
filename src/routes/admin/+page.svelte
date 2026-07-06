@@ -526,6 +526,7 @@
 		gap: var(--space-4);
 		max-width: 32rem;
 		padding: clamp(var(--space-6), 4vw, var(--space-8));
+		color: var(--color-text-primary);
 		background-color: var(--color-paper);
 		border: var(--border-thin) solid var(--color-line);
 		border-radius: var(--radius-md, 0.5rem);
