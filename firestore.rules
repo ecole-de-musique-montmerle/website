@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Collection d'actualités : lecture publique, écriture réservée aux administrateurs authentifiés.
+    match /articles/{article} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // Collection d'administrateurs : chaque utilisateur peut lire son propre document.
+    // Créer un document ici avec l'UID Firebase de l'administrateur pour lui donner l'accès.
+    match /admins/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false; // Ne pas créer/modifier depuis le client ; utiliser la console Firebase.
+    }
+  }
+}

@@ -557,6 +557,7 @@
 	.admin__bar {
 		border-block-end: var(--border-thin) solid var(--color-line);
 		background-color: var(--color-paper);
+		color: var(--color-text-primary);
 		padding-block: var(--space-4);
 	}
 
